@@ -1,0 +1,115 @@
+body #wdt-pro-add-widget h3 {
+	text-align: center !important;
+	padding: 15px 7px;
+	font-size: 1.3em;
+	margin-top: 5px
+}
+
+body div#widgets-right .widgets-holder-wrap .widgets-sortables {
+	padding-bottom: 45px
+}
+
+body div#widgets-right .widgets-holder-wrap.closed .widgets-sortables {
+	padding-bottom: 0
+}
+
+body .wdt-pro-widget-area-footer {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	border-top: 1px solid #eee
+}
+
+body .wdt-pro-widget-area-footer>div {
+	padding: 8px 8px 0
+}
+
+body .wdt-pro-widget-area-footer .wdt-pro-widget-area-id {
+	display: block;
+	float: left;
+	max-width: 48%;
+	overflow: hidden;
+	position: relative;
+	top: -6px
+}
+
+body .wdt-pro-widget-area-footer .wdt-pro-widget-area-buttons {
+	float: right
+}
+
+body .wdt-pro-widget-area-footer .description {
+	padding: 0 !important;
+	margin: 0 !important
+}
+
+body div#widgets-right .widgets-holder-wrap.closed .widgets-sortables .wdt-pro-widget-area-footer {
+	display: none
+}
+
+body .wdt-pro-widget-area-footer .wdt-pro-widget-area-delete {
+	display: block;
+	float: right;
+	margin: 0
+}
+
+body .wdt-pro-widget-area-footer .wdt-pro-widget-area-delete-confirm {
+	display: none;
+	float: right;
+	margin: 0 5px 0 0
+}
+
+body .wdt-pro-widget-area-footer .wdt-pro-widget-area-delete-cancel {
+	display: none;
+	float: right;
+	margin: 0
+}
+
+body .wdt-pro-widget-area-delete-confirm:hover:before {
+	color: red
+}
+
+body .wdt-pro-widget-area-delete-confirm:hover {
+	color: #000
+}
+
+body .wdt-pro-widget-area-delete:hover:before {
+	color: #888
+}
+
+body .activate_spinner {
+	display: block !important;
+	position: absolute;
+	top: 10px;
+	right: 4px;
+	background-color: #ececec
+}
+
+body #wdt-pro-add-widget form {
+	text-align: center
+}
+
+body #widget_area-wdt-pro-custom,
+body #widget_area-wdt-pro-custom h3 {
+	position: relative
+}
+
+body #wdt-pro-add-widget p {
+	margin-top: 0
+}
+
+body #wdt-pro-add-widget {
+	margin: 10px 0 0;
+	position: relative
+}
+
+body #wdt-pro-add-widget-input {
+	max-width: 95%;
+	padding: 8px;
+	margin-bottom: 14px;
+	margin-top: 3px;
+	text-align: center
+}

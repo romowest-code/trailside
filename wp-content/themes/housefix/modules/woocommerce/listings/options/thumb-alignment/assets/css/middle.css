@@ -1,0 +1,41 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Thumb Content Alignment */
+/*--------------------------------------------------------------*/
+
+   .woocommerce ul.products.product-thumb-alignment-middle li.product .product-thumb-content { text-align: center; }
+
+   .woocommerce ul.products.product-thumb-alignment-middle li.product .product-thumb:before { padding-top: 33.33% }
+   .woocommerce ul.products.product-thumb-alignment-middle li.product .product-thumb:after { padding-bottom: 33.33% }
+
+   .woocommerce ul.products[class*="iconsgroup-position-horizontal"].product-thumb-alignment-middle li.product .product-thumb-content { padding-top: 65px; padding-bottom: 65px; }
+
+   .woocommerce ul.products[class*="iconsgroup-position-vertical"].product-thumb-alignment-middle li.product .product-thumb-content { padding-left: 65px; padding-right: 65px; }
+
+
+   /* Hover Style - IconGroup - Bounce */
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons a,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons a.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons button.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons .button {
+      -webkit-transform: scale(0);
+         -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0); 
+               transform: scale(0);
+   }
+
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons a,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons a.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons button.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons .button {
+      -webkit-transform: scale(1);
+         -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1); 
+               transform: scale(1);
+   }
+
+/* #endregion - Product Listing - Thumb Content Alignment */

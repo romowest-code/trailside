@@ -1,0 +1,13 @@
+.customize-control-wdt-description .wdt-description {
+  font-style: italic;
+}
+
+.customize-control-wdt-description a.button {
+  margin-top: 5px;
+  font-style: normal;
+}
+
+.customize-control-wdt-description p {
+  margin: 0;
+  cursor: initial;
+}

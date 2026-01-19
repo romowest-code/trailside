@@ -1,0 +1,48 @@
+    .wdt-dashbord-section-holder-content .wdt-business-hours-list {
+        margin-left: 0;
+    }
+
+    .wdt-dashbord-section-holder-content .wdt-business-hours-list>li {
+        list-style: none;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 0.75fr 1fr 1fr;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .wdt-dashbord-section-holder-content .wdt-business-hours-list li span {
+        display: flex;
+        align-items: center;
+    }
+
+    .wdt-dashbord-section-holder-content .wdt-business-hours-list li span .selection-box {
+        width: 100%;
+    }
+
+    .wdt-attachments-box-container a.wdt-add-attachments-box.custom-button-style,
+    .wdt-add-listing .wdt-dashbord-section-holder-content .wdt-dashboard-option-item .wdt-generate-mls-number {
+        margin: 0 0 10px;
+    }
+    /*----*****---- << Mobile (Portrait) >> ----*****----*/
+    /* Note: Design for a width of 479px */
+
+    @media only screen and (max-width: 479px) {
+        .wdt-dashbord-section-holder-content .wdt-business-hours-list>li {
+            display: block;
+            width: 100%;
+            float: left;
+        }
+        .wdt-dashbord-section-holder-content .wdt-business-hours-list li>span:first-child {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .wdt-dashbord-section-holder-content .wdt-business-hours-list li>span {
+            width: 48%;
+            float: left;
+            margin-right: 4%;
+        }
+        .wdt-dashbord-section-holder-content .wdt-business-hours-list li>span:last-child {
+            margin-right: 0;
+        }
+    }

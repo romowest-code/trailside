@@ -1,0 +1,80 @@
+.wdt-donation-item { background: var(--wdtBodyBGColor); display: flex; flex-wrap: wrap; position: relative; width: 100%; box-shadow: 0 0 0 1px rgb(var(--wdtBorderColorRgb),0.1) inset; transition: var(--wdtBaseTransition); }
+
+.wdt-donation-item .wdt-donation-item-media { flex: 2.3; }
+.wdt-donation-item .wdt-donation-item-detail { flex: 3; }
+
+.wdt-donation-item .wdt-donation-item-media, .wdt-donation-item .wdt-donation-item-media > a { display: inline-flex; }
+.wdt-donation-item .wdt-donation-item-media img { min-width: 200px; object-fit: cover; width: 100%; }
+.wdt-donation-item .wdt-donation-item-detail { display: inline-flex; flex-wrap: wrap; padding: 30px 40px; position: relative; }
+
+.wdt-donation-item .wdt-donation-item-detail > *:not(:last-child) { margin: 0 0 1rem 0; }
+
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-title { margin-top: -0.25em; transition: var(--wdtBaseTransition); transform-style: preserve-3d; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-title, .wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-title a { display: inline-flex; }
+
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details { width: 100%; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container { display: flex; flex-wrap: wrap; width: 100%; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container .wdt-progressbar svg path:nth-child(2) { -webkit-transform: skewX(25deg); transform: skewX(25deg); -webkit-transform-origin: -100% 100%; transform-origin: -100% 100%; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container .wdt-progressbar-content { font-size: 0.9em; margin: 10px 0; }
+
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container .wdt-progressbar-content .wdt-progressbar-value { color: var(--wdtHeadAltColor); font-weight: bold; margin-left: 10px; margin-right: 10px; position: relative; top: auto; right: auto; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container .wdt-progressbar-content .wdt-progressbar-value .wdt-progressbar-percentage { font-size: inherit; top: auto; }
+
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-button { line-height: 1; margin-top: 1rem; overflow: hidden; position: relative; z-index: 0; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-button svg.icon-arrow-aft-btn { margin-left: 0.5em; width: auto; }
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-button:before { content: ""; opacity: 0; position: absolute; bottom: -2px; left: -2px; right: -2px; top: -2px; z-index: -1; -webkit-transition: var(--wdtAltTransition); transition: var(--wdtAltTransition); 
+
+  background-image: linear-gradient(80deg, var(--wdtPrimaryColor) 10%, var(--wdtTertiaryColor) 100%);
+}
+
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-button:hover:before { opacity: 1; }
+
+.wdt-donation-item:hover { box-shadow: 0 0 0 1px rgb(var(--wdtBorderColorRgb),0.1) inset, 0px 10px 20px -10px rgba(var(--wdtBorderColorRgb), 0.15); }
+.wdt-custom-donation-grid .wdt-donation-item { flex-flow: column; }
+
+/* Donation Horizandal Progress Bar */
+
+.wdt-donation-item .wdt-donation-item-detail{padding: 30px 30px;}
+.wdt-progressbar-horizontal .wdt-progressbar .wdt-progressbar-value {display: none !important;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-horizontal .wdt-progressbar-container .wdt-progressbar-content .wdt-progressbar-value
+{margin-left: auto;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-circle.wdt-progressbar-container .wdt-progressbar svg path:nth-child(2)
+{
+  -webkit-transform: unset;
+  transform: unset;
+  -webkit-transform-origin: unset;
+  transform-origin: unset;
+}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-circle.wdt-progressbar-container
+{    justify-content: center;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-circle.wdt-progressbar-container .wdt-progressbar-content .wdt-progressbar-value
+{display: none;}
+.wdt-progressbar-circle .wdt-progressbar {
+  width: 80px;
+  height: 80px;
+}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-container.wdt-progressbar-horizontal .wdt-progressbar-content .wdt-progressbar-value
+{
+  margin-left: auto;
+}
+.wdt-donation-item .wdt-donation-item-detail{
+  text-align: center;
+}
+.wdt-donation-item{flex-direction: column;box-shadow: 0 0 31.5px 5px rgb(var(--wdtPrimaryColorRgb),0.10) inset;}
+.wdt-donation-item .wdt-donation-item-detail{flex-direction: column;align-items: start;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details {width: auto;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-circle.wdt-progressbar-container{flex-direction: column;}
+.wdt-donation-item .wdt-donation-item-detail .wdt-donation-item-fund-details .wdt-progressbar-circle.wdt-progressbar-container .wdt-progressbar svg path:nth-child(1) {
+  fill-opacity: 1;
+  fill: var(--wdtPrimaryColor);
+  transform: scale(0.85) translate(10px, 8px);
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 1280px) {
+ 
+    .wdt-donation-item .wdt-donation-item-media, .wdt-donation-item .wdt-donation-item-detail, .wdt-donation-item .wdt-donation-item-media img { min-width: 265px; }
+
+}

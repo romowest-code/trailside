@@ -1,0 +1,73 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Sticky Add-to-Cart Section */
+/*--------------------------------------------------------------*/
+
+    .wdt-shop-single-sticky-addtocart-container { background-color: var(--wdtBodyBGColor); float: left; opacity: 0; padding: 0 10px; position: fixed; left: 0; bottom: 0; visibility: hidden; width: 100%; -webkit-box-shadow: 0 0 10px rgba(var(--wdtHeadAltColorRgb),0.15); box-shadow: 0 0 10px rgba(var(--wdtHeadAltColorRgb),0.15); -webkit-transform: translateY(100%); transform: translateY(100%); -webkit-transition: all 300ms linear 0s; transition: all 300ms linear 0s; }
+
+
+    .wdt-shop-single-sticky-addtocart-container.wdt-shop-sticky-enabled { opacity: 1; visibility: visible; -webkit-transform: translateY(0); transform: translateY(0); }
+    .wdt-shop-single-sticky-addtocart-container, #toTop.wdt-shop-sticky-enabled { z-index: 99999; }
+
+    .wdt-shop-single-sticky-addtocart-container .container > div,
+    .wdt-shop-single-sticky-addtocart-thumbnail, .wdt-shop-single-sticky-addtocart-info,
+    .wdt-shop-single-sticky-addtocart-info > * { float: none; vertical-align: middle; }
+
+    .wdt-shop-single-sticky-addtocart-container .container > div, .wdt-shop-single-sticky-addtocart-info > * { display: inline-block; }
+    .wdt-shop-single-sticky-addtocart-thumbnail, .wdt-shop-single-sticky-addtocart-info { display: table-cell; }
+
+    .wdt-shop-single-sticky-addtocart-info > *, .wdt-shop-single-sticky-addtocart-section > *,
+    .wdt-shop-single-sticky-addtocart-section a, .wdt-shop-single-sticky-addtocart-section a.button,
+    .wdt-shop-single-sticky-addtocart-section button, .wdt-shop-single-sticky-addtocart-section button.button, .wdt-shop-single-sticky-addtocart-section .button { margin: 5px 10px; }
+
+    .wdt-shop-single-sticky-addtocart-section a, .wdt-shop-single-sticky-addtocart-section a.button,
+    .wdt-shop-single-sticky-addtocart-section button, .wdt-shop-single-sticky-addtocart-section button.button, .wdt-shop-single-sticky-addtocart-section .button { line-height: normal; padding: 0.5em 1em; }
+
+    .wdt-shop-single-sticky-addtocart-container .container > div { padding: 10px 0; width: 50%; }
+    .wdt-shop-single-sticky-addtocart-section { text-align: right; }
+
+    .wdt-shop-single-sticky-addtocart-info > * { display: block; float: none !important; }
+
+    .wdt-shop-single-sticky-addtocart-thumbnail { line-height: 0; max-width: 75px; width: 75px; }
+    .wdt-shop-single-sticky-addtocart-thumbnail img { width: 100%; }
+
+    .wdt-shop-single-sticky-addtocart-price ins { background: none; }
+
+    .wdt-shop-single-sticky-addtocart-added { background-color: #77a464; color: var(--wdtAccentTxtColor); font-size: 13px; line-height: normal; padding: 4px 12px; -webkit-border-radius: 3px; border-radius: 3px; }
+
+    .wdt-shop-single-sticky-addtocart-section a.button.loading, .wdt-shop-single-sticky-addtocart-section button.button.loading, .wdt-shop-single-sticky-addtocart-section input.button.loading { padding-right: 20px; }
+
+    .wdt-shop-single-sticky-addtocart-section a.add_to_cart_button.added { display: none; }
+
+    .wdt-shop-single-sticky-addtocart-section a.added_to_cart.wc-forward { cursor: pointer; display: inline-block; float: none; position: relative; outline: none; }
+
+
+    .wdt-shop-single-sticky-addtocart-section a.added_to_cart.wc-forward { color: var(--wdtAccentTxtColor); }
+
+/* #endregion - Sticky Add-to-Cart Section */
+
+
+/*--------------------------------------------------------------
+ 	Responsive
+--------------------------------------------------------------*/
+
+    /*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+    /* Common Styles for the devices below 767px width */
+    @media only screen and (max-width: 767px) {
+
+        .wdt-shop-single-sticky-addtocart-container.wdt-shop-sticky-enabled { display: none; }
+
+    }
+
+
+    /*----*****---- << Tablet (Portrait) >> ----*****----*/
+
+    /* Note: Design for a width of 768px */
+    @media only screen and (min-width:768px) and (max-width:1024px) {
+
+        .wdt-shop-single-sticky-addtocart-info h3 { font-size: 16px; }
+
+    }
+
+/* #endregion - Responsive */

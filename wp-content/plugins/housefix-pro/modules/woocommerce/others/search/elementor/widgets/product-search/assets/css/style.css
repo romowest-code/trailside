@@ -1,0 +1,76 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Search */
+/*--------------------------------------------------------------*/
+
+    .wdtShopSearchForm, .wdt-shop-product-search-item-holder {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .wdtShopSearchForm > .wdt-shop-product-search-item { min-width: 250px; }
+    .wdtShopSearchForm .wdt-shop-product-search-item-holder, .wdtShopSearchForm .wdt-shop-product-search-item-holder > .wdt-shop-product-search-item:first-child { width: 100%; }
+
+    .wdtShopSearchForm .wdt-shop-search-field,
+    .wdtShopSearchForm .wdt-shop-search-field + .select2-container.select2-container--default .select2-selection--single,
+    .wdtShopSearchForm .wdt-shop-search-field + .select2-container.select2-container--default .select2-selection--multiple { height: 50px !important; line-height: 50px; padding-top: 0; padding-bottom: 0; }
+
+    .wdtShopSearchForm .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered { margin-top: -1px; padding-left: 20px; }
+
+    .wdtShopSearchForm .wdt-shop-search-field.wdt-shop-search-submit-field { margin-top: 0; border-radius: 0; border-top-right-radius: var(--wdtRadius_1X) !important; border-bottom-right-radius: var(--wdtRadius_1X) !important; }
+
+    .wdtShopSearchForm .wdt-shop-product-search-item-holder:only-child .wdt-shop-search-field.wdt-shop-search-keyword-field,
+    .wdtShopSearchForm .select2-container--default .select2-selection--single,
+    .wdtShopSearchForm .select2-container--default .select2-selection--multiple { border-right-width: 0; border-radius: 0; border-top-left-radius: var(--wdtRadius_1X) !important; border-bottom-left-radius: var(--wdtRadius_1X) !important; }
+
+
+    .wdt-shop-product-search-item-holder { position: relative; }
+    .wdtShopSearchForm .wdt-shop-product-search-item + .wdt-shop-product-search-item-holder:before { background-color: currentColor; content: ""; height: 20px; opacity: 0.15; position: absolute; left: 0; top: 50%; width: 1px; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+
+    .wdtShopSearchForm .wdt-shop-product-search-item + .wdt-shop-product-search-item-holder .wdt-shop-search-field { border-left-width: 0; -webkit-border-radius: 0; border-radius: 0; }
+
+    .wdtShopSearchForm .selection-box .chosen-container-single .chosen-drop { margin-top: 5px; padding-top: 15px; }
+
+    .wdtShopSearchForm .select2-container--open .select2-dropdown.select2-dropdown--above,
+    .wdtShopSearchForm .select2-container--open .select2-dropdown.select2-dropdown--below { -webkit-border-radius: 10px; border-radius: 10px; }
+
+
+/* #endregion - Product Search */
+
+
+/*--------------------------------------------------------------*/
+/* #region - Responsive */
+/*--------------------------------------------------------------*/
+
+    /*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+    /* Common Styles for the devices below 767px width */
+    @media only screen and (max-width: 767px) {
+
+        .wdtShopSearchForm .wdt-shop-product-search-item + .wdt-shop-product-search-item-holder:before { content: none; }
+        .wdtShopSearchForm, .wdt-shop-product-search-item-holder { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+        .wdtShopSearchForm > .wdt-shop-product-search-item { min-width: 100%; text-align: center; }
+
+        .wdtShopSearchForm .select2-container--default .select2-selection--single,
+        .wdtShopSearchForm .select2-container--default .select2-selection--multiple,
+        .wdtShopSearchForm .wdt-shop-search-field.wdt-shop-search-keyword-field, .wdtShopSearchForm .wdt-shop-search-field.wdt-shop-search-submit-field { -webkit-border-radius: var(--wdtRadius_1X) !important; border-radius: var(--wdtRadius_1X) !important; }
+
+        .wdtShopSearchForm .select2-container--default .select2-selection--single,
+        .wdtShopSearchForm .select2-container--default .select2-selection--multiple,
+        .wdtShopSearchForm .wdt-shop-search-field.wdt-shop-search-keyword-field,
+        .wdtShopSearchForm .wdt-shop-product-search-item + .wdt-shop-product-search-item-holder .wdt-shop-search-field,
+        .wdtShopSearchForm .wdt-shop-product-search-item-holder:only-child .wdt-shop-search-field.wdt-shop-search-keyword-field { border-width: 1px; }
+
+        .wdtShopSearchForm .wdt-shop-product-search-item-holder > .wdt-shop-product-search-item:nth-child(2):nth-last-child(1) { text-align: center; width: 100%; }
+
+        .wdtShopSearchForm .wdt-shop-search-field.wdt-shop-search-field { margin: 10px auto 0; }
+
+    }
+
+/* #endregion - Responsive */

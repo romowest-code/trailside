@@ -1,0 +1,20 @@
+
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing Style */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product .product-wrapper:before { bottom: 0; content: ''; left: 0; margin: auto; position: absolute; right: 0; top: 0; z-index: 10 !important; }
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product:hover .product-wrapper:before { background-color: inherit; -webkit-box-shadow: 0 0 10px 1px rgba(var(--wdtHeadAltColorRgb),0.3); box-shadow: 0 0 10px 1px rgba(var(--wdtHeadAltColorRgb),0.3); }
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product:hover .product-thumb, .woocommerce ul.products.product-style-egrp-overlap-pc li.product:hover .product-details { z-index: 10; }
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product .product-details .product-element-group-wrapper { display: none; opacity: 0; visibility: hidden; z-index: 1; -webkit-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product .product-details .product-element-group-wrapper .product-element-group-items { margin: 5px 0; -webkit-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+
+    .woocommerce ul.products.product-style-egrp-overlap-pc li.product:hover .product-details .product-element-group-wrapper { display: block; opacity: 1; visibility: visible; }
+
+
+/* #endregion - Product Listing Style */

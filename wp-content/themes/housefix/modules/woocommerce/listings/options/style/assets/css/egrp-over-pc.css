@@ -1,0 +1,13 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing Style */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-style-egrp-over-pc li.product .product-details { overflow: hidden; }
+    .woocommerce ul.products.product-style-egrp-over-pc li.product .product-details > div.product-element-group-wrapper { margin: 0; opacity: 0; padding-left: inherit; padding-right: inherit; position: absolute; left: 0; right: 0; top: 50%; visibility: hidden;z-index: 10; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+    .woocommerce ul.products.product-style-egrp-over-pc li.product:hover .product-details > div { opacity: 0; visibility: hidden; }
+    .woocommerce ul.products.product-style-egrp-over-pc li.product:hover .product-details > div.product-element-group-wrapper { opacity: 1; visibility: visible; }
+
+    .woocommerce ul.products.product-style-egrp-over-pc li.product .product-details > div { -webkit-transition: var(--wdtBaseTransition); -moz-transition: var(--wdtBaseTransition); -ms-transition: var(--wdtBaseTransition); -o-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+
+/* #endregion - Product Listing Style */

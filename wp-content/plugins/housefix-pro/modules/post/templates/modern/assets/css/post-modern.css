@@ -1,0 +1,52 @@
+    .post-modern .blog-image img {width: 100%;height: 600px;object-fit: cover;object-position: center center;}
+    .blog-single-entry.post-modern .thumb {margin-right: 30px;}
+    .blog-single-entry.post-modern .entry-author-bio{display: flex;}
+    .blog-single-entry.post-modern .single-entry-categories a:before {content: '\1F441';margin-right: 15px;}
+    .blog-single-entry.post-modern a{text-decoration: none;font-weight: 500;text-transform: uppercase;}
+    .blog-single-entry.post-modern .entry-author-bio a {text-decoration: none;font-weight: 500;text-transform: uppercase;font-size: var(--wdtFontSize_H6);}
+    .blog-single-entry.post-modern .post-meta,.blog-single-entry.post-modern .share, .blog-single-entry.post-modern .single-entry-author{display: flex;width: 100%;flex-wrap: wrap;align-items: center;}
+    .blog-single-entry.post-modern ul.wdt-share-list{margin-bottom: 0;padding-left:0;}
+    .blog-single-entry.post-modern ul.wdt-share-list li {display: inline-block;padding-bottom: 0;}
+    .blog-single-entry.post-modern .single-entry-title h1 {margin-top: 0;}
+    .post-modern .entry-thumb.single-preview-img {margin-bottom: 80px;}
+    .blog-single-entry.post-modern .thumb img {border-radius: 50%;}
+    .blog-single-entry.post-modern .desc {color: var(--wdtBodyTxtColor);opacity: 0.9;font-size: calc(var(--wdtFontSize_H6) - 2px);letter-spacing: .5px;}
+    .blog-single-entry.post-modern .meta-right .single-entry-social-share,.blog-single-entry.post-modern .meta-left .single-entry-author {margin-bottom: 0;}
+    .blog-single-entry.post-modern .meta-author-img img {border-radius: 50%;margin-right: 10px;}
+    .blog-single-entry.post-modern .post-meta {border-width: 1px 0px 1px 0px;border-style: solid;border-color: var(--wdtBorderColor); justify-content: space-between; margin-bottom: 30px; padding-top: 30px;padding-bottom: 30px;}
+    .share i {display: none;}
+    .blog-single-entry.post-modern .single-entry-categories a{color: var(--wdtPrimaryColor);}
+    .blog-single-entry.post-modern .single-entry-categories a:hover {color: var(--wdtSecondaryColor);}
+    .post-modern .zmdi-long-arrow-left:before,.post-modern .zmdi-long-arrow-right:before {font-weight: bold;font-size: 20px;color: var(--wdtPrimaryColor);}
+    .post-modern .zmdi-long-arrow-left:before{content: '\1438';}
+    .post-modern .zmdi-long-arrow-right:before {content: '\1433';}
+
+    /* Navigation */
+
+    /*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+	/* Common Styles for the devices above 767px width */
+
+    @media only screen and (min-width: 992px)
+    {
+    .post-prev-link{float: left;}
+    .post-next-link {float: right;}
+    .entry-post-navigation {position: absolute;width: 100%;padding: 0 50px;}
+    .post-modern + .container{width: calc(100% - 450px);padding: 0 20px;}
+    .post-prev-link, .post-next-link {display: inline-block;width: 200px;}
+    }
+    @media only screen and (min-width: 1024px) 
+    {
+    .post-prev-link, .post-next-link {display: inline-block;width: 250px;}
+    .post-modern + .container{width: calc(100% - 650px);padding: 0 20px;}
+    }
+    @media only screen and (max-width: 992px)
+    {
+     .entry-post-navigation {display: flex;justify-content: space-between;padding: 0 50px;}
+     .nav-title-wrap h3{display: none;}
+    }
+    @media only screen and (max-width: 480px)
+    {
+    .post-modern .nav-title-wrap {margin-bottom: 20px;}
+    }
+

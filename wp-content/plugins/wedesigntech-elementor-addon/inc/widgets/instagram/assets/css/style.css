@@ -1,0 +1,67 @@
+
+.wdt-instagram-item, .wdt-instagram-item:before, .wdt-instagram-item:after, .wdt-instagram-item .wdt-instagram-media, .wdt-instagram-item .wdt-instagram-media a, .wdt-instagram-item .wdt-instagram-media img, .wdt-instagram-item .wdt-instagram-media-overlay, .wdt-instagram-item .wdt-instagram-media-icon { -webkit-transition: var(--wdt-elementor-base-transition); transition: var(--wdt-elementor-base-transition); }
+
+.wdt-instagram-holder .wdt-column-wrapper .wdt-column { display: inline-flex; }
+.wdt-instagram-item, .wdt-instagram-item .wdt-instagram-media, .wdt-instagram-item .wdt-instagram-media > a { display: inline-flex; flex-wrap: wrap; position: relative; width: 100%; }
+
+.wdt-instagram-item:before, .wdt-instagram-item:after, .wdt-instagram-item .wdt-instagram-media img { -webkit-border-radius: inherit; border-radius: inherit; }
+
+.wdt-instagram-item:before, .wdt-instagram-item:after { content: ""; display: inline !important; height: 100%; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; z-index: 1; }
+
+.wdt-instagram-item:before { background-color: transparent !important; }
+
+.wdt-instagram-item:hover:before, .wdt-instagram-item:after { opacity: 0; visibility: hidden; }
+.wdt-instagram-item:before, .wdt-instagram-item:hover:after { opacity: 1; visibility: visible; }
+
+
+.wdt-instagram-item .wdt-instagram-media { overflow: hidden; position: relative; z-index: 0; }
+
+.wdt-instagram-item .wdt-instagram-media .wdt-instagram-media-icon, 
+.wdt-instagram-item .wdt-instagram-media .wdt-instagram-media-overlay { opacity: 0; z-index: 1; }
+.wdt-instagram-item .wdt-instagram-media .wdt-instagram-media-overlay { position: absolute; bottom: 0; left: 0; right: 0; top: 0; }
+
+.wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-icon { opacity: 1; }
+.wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-overlay { opacity: 0.9; background-color: rgba(var(--wdt-elementor-color-secondary-rgb), 0.6) }
+
+
+.wdt-instagram-item .wdt-instagram-media img { height: 100%; width: 100%; object-fit: cover; -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: scale(1) translateZ(0); transform: scale(1) translateZ(0); -webkit-transition-duration: 0.5s; transition-duration: 0.5s; }
+
+
+/* Icon - Default */
+.wdt-instagram-item .wdt-instagram-media-icon { display: inline-flex; font-size: 1.5em; line-height: 1; height: 1em; margin: auto; position: absolute; bottom: 0; left: 0; right: 0; top: 0; width: 1em; }
+.wdt-instagram-item .wdt-instagram-media-icon i { height: 100%; width: 100%; }
+.wdt-instagram-item .wdt-instagram-media-icon, .wdt-instagram-item .wdt-instagram-media-icon i { -webkit-transition: inherit; transition: inherit; }
+.wdt-instagram-item .wdt-instagram-media-icon i, .wdt-instagram-item:hover .wdt-instagram-media-icon i { color: var(--wdt-elementor-color-accent); }
+.wdt-instagram-item:hover .wdt-instagram-media-icon:hover i { opacity: 0.75; }
+
+/* Icon - Plus */
+.wdt-instagram-holder .wdt-instagram-item .wdt-instagram-media-icon i.plus { position: relative; }
+.wdt-instagram-holder .wdt-instagram-item .wdt-instagram-media-icon i.plus:before,
+.wdt-instagram-holder .wdt-instagram-item .wdt-instagram-media-icon i.plus:after { background-color: currentColor; content: ""; display: inline !important; margin: auto; pointer-events: none; position: absolute; transform-style: preserve-3d; transition: inherit; transition-delay: 0.5s }
+.wdt-instagram-holder .wdt-instagram-item .wdt-instagram-media-icon i.plus:before { height: 2px; left: auto; right: 0; bottom: 0; top: 0; width: 0; }
+.wdt-instagram-holder .wdt-instagram-item .wdt-instagram-media-icon i.plus:after { height: 0; bottom: 0; top: auto; left: 0; right: 0; width: 2px; }
+
+.wdt-instagram-holder .wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-icon i.plus:before { left: 0; right: auto; width: 100%; } 
+.wdt-instagram-holder .wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-icon i.plus:after { height: 100%; bottom: auto; top: 0; } 
+
+
+/* Hover Effects */
+
+/* Black & White */
+.wdt-effects-black-white .wdt-instagram-item:not(:hover) .wdt-instagram-media img { -webkit-filter: grayscale(1); filter: grayscale(1); }
+.wdt-effects-black-white .wdt-instagram-item .wdt-instagram-media .wdt-instagram-media-overlay { background-image: linear-gradient(to bottom,transparent 0%,var(--wdt-elementor-color-black) 100%); }
+
+/* Scale */
+.wdt-effects-scale-in .wdt-instagram-item .wdt-instagram-media img { -webkit-transform: scale(1.1) translateZ(0); transform: scale(1.1) translateZ(0); -webkit-transition: all 0.5s ease-in-out 0s; transition: all 0.5s ease-in-out 0s; }
+
+.wdt-effects-scale-in .wdt-instagram-item .wdt-instagram-media .wdt-instagram-media-overlay { -webkit-transform: scale(0.85) translateZ(0); transform: scale(0.85) translateZ(0); -webkit-transition: all 0.5s ease-in-out 0s, -webkit-transform 0.5s ease-in-out 0.25s; transition: all 0.5s ease-in-out 0s, transform 0.5s ease-in-out 0.25s; }
+
+.wdt-effects-scale-in .wdt-instagram-item:hover .wdt-instagram-media img, 
+.wdt-effects-scale-in .wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-overlay { -webkit-transform: scale(1) translateZ(0); transform: scale(1) translateZ(0); }
+
+
+/* Scale & Rotate */
+.wdt-effects-scale-out-rotate .wdt-instagram-item .wdt-instagram-media img { -webkit-transform: scale(1) translateZ(0); transform: scale(1) translateZ(0); -webkit-transition: all 0.5s ease-in-out 0s; transition: all 0.5s ease-in-out 0s; }
+.wdt-effects-scale-out-rotate .wdt-instagram-item:hover .wdt-instagram-media img { -webkit-transform: scale(1.1) rotate(-4deg) translateZ(0); transform: scale(1.1) rotate(-4deg) translateZ(0); }
+
+.wdt-effects-scale-out-rotate .wdt-instagram-item:hover .wdt-instagram-media .wdt-instagram-media-overlay { border: 10px solid transparent; -webkit-box-shadow: 0 0 0 2px currentColor inset; box-shadow: 0 0 0 2px currentColor inset; }

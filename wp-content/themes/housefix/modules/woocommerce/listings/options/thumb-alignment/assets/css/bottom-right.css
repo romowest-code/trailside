@@ -1,0 +1,35 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Thumb Content Alignment */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-thumb-alignment-bottom-right li.product .product-thumb-content { text-align: right; }
+
+    .woocommerce ul.products.product-thumb-alignment-bottom-right li.product .product-thumb:before { padding-top: 66.66%; }
+
+    .woocommerce ul.products.product-thumb-alignment-bottom-right li.product .product-thumb:after { padding-top: 0; padding-bottom: 0; }
+
+    .woocommerce ul.products:not([class*="alignment-bottom"]) li.product.featured .product-thumb-content { padding-top: 35px; }
+
+
+    /* Hover Style - IconGroup - Bounce */
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb-content .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb-content .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb-content .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb-content .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb-content .product-buttons-wrapper.product-icons .button { bottom: -60px; top: auto; visibility: hidden; }
+
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb-content .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb-content .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb-content .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb-content .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb-content .product-buttons-wrapper.product-icons .button { bottom: 0; visibility: visible; }
+
+
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-bottom"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons .button { bottom: 0; top: auto; }
+
+/* #endregion - Product Listing - Thumb Content Alignment */

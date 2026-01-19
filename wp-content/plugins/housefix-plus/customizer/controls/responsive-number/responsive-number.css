@@ -1,0 +1,15 @@
+.customize-control-wdt-responsive-number .customize-control-title { width: 100%; }
+.customize-control-wdt-responsive-number .customize-control-title,
+.customize-control-wdt-responsive-number .wdt-responsive-number-switcher { display: inline-block; vertical-align: middle; }
+.customize-control-wdt-responsive-number .customize-control-title .item-reset { float: right; font-size: 15px; position: relative; top: 5px; }
+.customize-control-wdt-responsive-number .item-reset:hover, .customize-control-wdt-responsive-number .item-reset:focus { color: red; }
+.customize-control .wdt-responsive-number-switcher { margin-left:5px; position: relative; top: -1px; width:auto; }
+.customize-control.wdt-responsive-number-switcher-open .wdt-responsive-number-switcher li { display:block; }
+.customize-control .wdt-responsive-number-switcher li { float:left; margin:0; }
+.customize-control .wdt-responsive-number-switcher li button { float: left; height:20px; width:20px; background-color:#a4afb7; position:relative; margin-left:5px; margin-bottom: auto; margin-top: auto; color:#fff; font-size:10px; text-align:center; border-radius:50%; border:0; outline:0; -webkit-transition:background-color .5s; transition:background-color .5s; cursor:pointer; padding:0; }
+.customize-control .wdt-responsive-number-switcher li button:hover { background-color:#c2cbd2; }
+.customize-control .wdt-responsive-number-switcher li button.active { background-color:#13aff0; }
+.customize-control .wdt-responsive-number-switcher li button i { width:auto; height:auto; font-size:inherit; line-height:18px; }
+.customize-control-wdt-responsive-number .control-wrap:not(.active) { display: none; }
+.customize-control-wdt-responsive-number .wrapper .wdt-responsive-select { width: 50px; margin: 0; padding: .1em; margin-left: 2px; }
+.customize-control-wdt-responsive-number .wrapper input { width: calc(100% - 52px); float: left; }

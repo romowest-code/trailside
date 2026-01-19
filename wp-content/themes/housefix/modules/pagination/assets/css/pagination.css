@@ -1,0 +1,277 @@
+
+
+/*--------------------------------------------------------------
+    Pagination
+--------------------------------------------------------------*/
+
+    .pagination { float: none; display: inline-block; margin-top: 0px; text-align: center; width: 100%; }
+    .pagination .column { float: right; width: 100%; }
+    .pagination .column, .pagination ul { margin: 0; }
+
+    .pagination ul, .entry-body > .page-link { padding-left: 0; display: flex; justify-content: center; text-align: center; }
+    .pagination ul li, .woocommerce nav.woocommerce-pagination ul li { display: inline-block; float: none; padding-bottom: 0; display: contents; }
+
+    .page-link {  clear: both; float: left; width: 100%; }
+
+    .page-link a, .pagination ul li a,
+    .woocommerce nav.woocommerce-pagination ul li a,
+    .page-link > span, .pagination ul li span,
+    .woocommerce nav.woocommerce-pagination ul li span { background: var(--wdtSecondaryColor); border: none; display: inline-block; font-size: 14px; font-weight: 400; height: 50px; letter-spacing: 2.8px; line-height: 50px; margin: 10px 12px 0 0; padding: 0; position: relative; text-align: center; text-transform: uppercase; width: 50px; -webkit-border-radius: var(--wdtRadius_1X); border-radius:var(--wdtRadius_1X); }
+
+    .page-link a:not(:focus), .pagination ul li a:not(:focus), .woocommerce nav.woocommerce-pagination ul li a:not(:focus) { text-decoration: none; }
+
+    .woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li { border-width: 0; }
+    .woocommerce nav.woocommerce-pagination ul li span, .woocommerce nav.woocommerce-pagination ul li a { margin: 0; }
+
+    @media all and (-ms-high-contrast:none) {
+
+        .pagination ul li a.next { margin-right: 0; }
+        .pagination ul li a.next, .pagination ul li a.prev { top: -24px; } /* IE10 */
+        *::-ms-backdrop, .pagination ul li a.next, .pagination ul li a.prev { top: -24px; } /* IE11 */
+
+    }
+
+    .pagination ul li a.next i, .pagination ul li a.prev i { font-size: calc(var(--wdtFontSize_Base) - 2px); height: 30px; line-height: 30px; margin: 0; text-align: center; text-decoration: inherit; width: 30px;}
+
+    .pagination div[class*="-posts"] { display: inline-block; float: none; position: relative; text-align: center; width: auto; z-index: 9; }
+    .pagination div[class*="-posts"] a { display: inline-block; float: none; margin: 2px; min-width: 150px; -webkit-border-radius: var(--wdtRadius_3X); border-radius: var(--wdtRadius_3X); }
+
+    .pagination:empty { display: none; }
+    .archive .pagination.blog-pagination:empty { display: inline-block; }
+
+    .pagination .newer-posts a { margin-bottom: -1px; padding: var(--wdtPadding_Btn); }
+    .pagination .older-posts a { margin-bottom: -1px; padding: var(--wdtPadding_Btn); }
+    .pagination .older-posts i, .pagination .newer-posts i { height: 20px; line-height: 20px; text-align: center; width: auto; }
+    .pagination .older-posts i { margin-left: 5px; }
+    .pagination .newer-posts i { margin-right: 5px; }
+    .pagination .older-posts i:before, .pagination .newer-posts i:before { margin: 0; width: auto; }
+    .pagination div[class*="-posts"]:only-child a { margin: 0; }
+
+    .pagination a.loadmore-btn { display: inline-block; /*height: 35px; line-height: 35px; padding: 0 20px;*/ position: relative; width: auto; margin-top: 10px; }
+    .pagination a.loadmore-btn:not(.more-items) { cursor: not-allowed; }
+    /* .pagination a.loadmore-btn:before { border: 1px solid; bottom: -5px; content: ''; display: block; left: -5px; margin: auto; position: absolute; right: -5px; top: -5px; } */
+
+    .tpl-blog-holder.loading + .pagination a.loadmore-btn:after { animation: animateCircle 2s linear infinite; border: 3px solid transparent; border-radius: 50%; border-right: 3px solid #fff; border-top: 3px solid #fff; bottom: 0; content: ''; display: block; height: 25px; left: 0; margin: auto; opacity: .5; position: absolute; right: 0; top: 0; width: 25px; }
+
+    @keyframes animateCircle {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes animate {
+        0% { transform: rotate(45deg); }
+        100% { transform: rotate(405deg); }
+    }
+
+    .pagination .newer-posts a:not(:focus), .pagination .older-posts a:not(:focus), .pagination ul li a:not(:focus), .pagination a.loadmore-btn:not(:focus) { text-decoration: none; }
+    /* .pagination .newer-posts a:focus, .pagination .older-posts a:focus, .pagination ul li a:focus, .pagination a.loadmore-btn:focus { text-decoration: underline !important; } */
+
+    .pagination ul li a.next.page-numbers span {
+        margin: 0;
+        line-height: 50px;
+    }
+    .pagination ul li a.next.page-numbers,
+    .pagination ul li a.prev.page-numbers
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+    }
+    .pagination ul li a.next.page-numbers
+    {
+        margin-left: 20px;
+    } 
+    .pagination ul li a.prev.page-numbers
+    {
+        margin-right: 20px;
+    }
+    .pagination ul li a.next.page-numbers, 
+    .pagination ul li a.next.page-numbers span,
+    .pagination ul li a.prev.page-numbers, 
+    .pagination ul li a.prev.page-numbers span
+    {
+        border: none !important;
+        width: auto;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+    }
+    .pagination ul li a.next i, .pagination ul li a.prev i
+    {
+        height: auto;
+        width: auto;
+        display: inline-flex;
+        margin: 0 5px;
+    }
+    a.next.page-numbers i:after {
+        content: '';
+        position: unset;
+        background: var(--wdtSecondaryColor);
+        width: 20px;
+        height: 15px;
+        -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='800px' height='800px' viewBox='-4.5 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-425.000000, -6679.000000)' fill='currentcolor'%3E%3Cg transform='translate(56.000000, 160.000000)'%3E%3Cpath d='M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-image: url("data:image/svg+xml,%0A%3Csvg width='800px' height='800px' viewBox='-4.5 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-425.000000, -6679.000000)' fill='currentcolor'%3E%3Cg transform='translate(56.000000, 160.000000)'%3E%3Cpath d='M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        mask-position: center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        display: inline-block;
+        transition: var(--wdtBaseTransition);
+    }
+    a.prev.page-numbers:hover i:after,
+    a.next.page-numbers:hover i:after
+    {
+        background: var(--wdtPrimaryColor);  
+    }
+    a.next.page-numbers i:before
+    {
+        display: none;
+    }
+    a.prev.page-numbers i:after {
+        content: '';
+        position: unset;
+        background: var(--wdtSecondaryColor);
+        width: 20px;
+        height: 15px;
+        -webkit-mask-image: url("data:image/svg+xml,%0A%3Csvg width='800px' height='800px' viewBox='-4.5 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-425.000000, -6679.000000)' fill='currentcolor'%3E%3Cg transform='translate(56.000000, 160.000000)'%3E%3Cpath d='M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-image: url("data:image/svg+xml,%0A%3Csvg width='800px' height='800px' viewBox='-4.5 0 20 20' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(-425.000000, -6679.000000)' fill='currentcolor'%3E%3Cg transform='translate(56.000000, 160.000000)'%3E%3Cpath d='M370.39,6519 L369,6520.406 L377.261,6529.013 L376.38,6529.931 L376.385,6529.926 L369.045,6537.573 L370.414,6539 C372.443,6536.887 378.107,6530.986 380,6529.013 C378.594,6527.547 379.965,6528.976 370.39,6519'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        mask-position: center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        transform:rotate(180deg);
+        display: inline-block;
+        transition: var(--wdtBaseTransition);
+    }
+    a.prev.page-numbers i:before
+    {
+        display: none;
+    }
+    .pagination ul li a.prev.page-numbers span {
+        margin-top: 0;
+    }
+
+
+
+
+/*--------------------------------------------------------------
+    Default Colors
+--------------------------------------------------------------*/
+
+    .page-link a, .pagination ul li a,
+    .woocommerce nav.woocommerce-pagination ul li a,
+    .page-link > span, .pagination ul li span,
+    .woocommerce nav.woocommerce-pagination ul li span { color: var(--wdtAccentTxtColor); }
+
+    .pagination .newer-posts a, .pagination .older-posts a, .pagination a.loadmore-btn,
+    .page-link > a:hover, .page-link > a:focus, .page-link > span,
+    .pagination ul li a:hover, .pagination ul li a:focus, .pagination ul li span:not(.dots),
+    .woocommerce nav.woocommerce-pagination ul li a:focus, 
+    .woocommerce nav.woocommerce-pagination ul li a:hover, 
+    .woocommerce nav.woocommerce-pagination ul li span.current { color: var(--wdtAccentTxtColor); }
+
+    .page-link > a:not(.prev):not(.next):hover, 
+    .page-link > a:not(.prev):not(.next):focus, 
+    .page-link > span.page-numbers, 
+    .pagination ul li a:not(.prev):not(.next):hover, 
+    .pagination ul li a:not(.prev):not(.next):focus, 
+    .pagination ul li span.page-numbers:not(.dots), 
+    .woocommerce nav.woocommerce-pagination ul li a:not(.prev):not(.next):focus, 
+    .woocommerce nav.woocommerce-pagination ul li a:not(.prev):not(.next):hover, 
+    .woocommerce nav.woocommerce-pagination ul li span.page-numbers.current
+    {
+        background-color: var(--wdtTertiaryColor);
+    }
+
+    .pagination .newer-posts, .pagination .older-posts { background: var(--wdtBodyBGColor); }
+
+    .page-link a, .pagination ul li a,
+    .page-link > span, .pagination ul li span,
+    .pagination a.loadmore-btn:before,
+    .woocommerce nav.woocommerce-pagination ul li a,
+    .woocommerce nav.woocommerce-pagination ul li span { border-color: var(--wdtBorderColor); }
+
+    .tpl-blog-holder.loading + .pagination a.loadmore-btn:after { border-top-color: var(--wdtBodyBGColor); border-right-color: var(--wdtBodyBGColor); }
+
+    .pagination ul li a.next.page-numbers:hover, .pagination ul li a.next.page-numbers:hover span,
+    .pagination ul li a.prev.page-numbers:hover, .pagination ul li a.prev.page-numbers:hover span {
+        color: var(--wdtPrimaryColor);
+    }
+    .pagination ul li a.next.page-numbers, .pagination ul li a.next.page-numbers span,
+    .pagination ul li a.prev.page-numbers, .pagination ul li a.prev.page-numbers span
+    {
+        color: var(--wdtSecondaryColor);
+        transition: var(--wdtBaseTransition);
+    }
+    .pagination.blog-pagination ul
+    {
+        justify-content: start;
+        margin-top: 50px;
+    }
+
+/*--------------------------------------------------------------
+    Accents
+--------------------------------------------------------------*/
+
+    /* Primary Color */
+    .tpl-blog-holder.loading + .pagination a.loadmore-btn { color: var(--wdtPrimaryColor); }
+
+    .pagination .newer-posts a, .pagination .older-posts a, .pagination a.loadmore-btn,
+    .page-link > a:hover, .page-link > a:focus, .page-link > span,
+    .pagination ul li a:hover, .pagination ul li a:focus, .pagination ul li span:not(.dots),
+    .woocommerce nav.woocommerce-pagination ul li a:focus, 
+    .woocommerce nav.woocommerce-pagination ul li a:hover, 
+    .woocommerce nav.woocommerce-pagination ul li span.current { background-color: var(--wdtSecondaryColor); }
+
+    .page-link > a:hover, .page-link > a:focus, .page-link > span,
+    .pagination ul li a:hover, .pagination ul li a:focus, .pagination ul li span:not(.dots),
+    .woocommerce nav.woocommerce-pagination ul li a:focus, 
+    .woocommerce nav.woocommerce-pagination ul li a:hover, 
+    .woocommerce nav.woocommerce-pagination ul li span.current { border-color: var(--wdtPrimaryColor); }
+
+    .pagination .newer-posts a:hover, .pagination .older-posts a:hover, .pagination a.loadmore-btn:hover, .pagination a.loadmore-btn:not(.more-items) { background: var(--wdtPrimaryColor); }
+
+    .tpl-blog-holder.loading + .pagination a.loadmore-btn:hover { color: var(--wdtSecondaryColor); }
+
+
+/*--------------------------------------------------------------
+    Responsive
+--------------------------------------------------------------*/
+
+    /*----*****---- << Tablet (Portrait) >> ----*****----*/
+
+    /* Note: Design for a width of 768px */
+    @media only screen and (min-width:768px) and (max-width:1024px) {
+
+
+    }
+
+/*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+/* Common Styles for the devices below 767px width */
+@media only screen and (max-width: 767px) {
+
+    .pagination ul li a, .pagination ul li span, .page-link a, .page-link > span, .woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span { font-size: calc(var(--wdtFontSize_Base) - 3px); font-weight: 600; height: 40px; line-height: 40px; width: 40px; }
+    .pagination ul li a.prev.page-numbers span, .pagination ul li a.next.page-numbers span{display: none;}
+
+
+    .pagination ul li a.next i, .pagination ul li a.prev i,
+    .woocommerce .product-loop-sorting nav.woocommerce-pagination ul li i { font-size: calc(var(--wdtFontSize_Base) - 3px); }
+    .pagination,
+    .pagination.blog-pagination ul{margin-top: 0;}
+    .pagination ul li a.prev.page-numbers {
+        margin-right: 10px;
+    }
+    .pagination ul li a.next.page-numbers {
+        margin-left: 0;
+    }
+    .pagination.blog-pagination ul
+    {
+        justify-content: center;
+    }
+}

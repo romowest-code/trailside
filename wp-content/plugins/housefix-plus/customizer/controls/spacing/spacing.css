@@ -1,0 +1,47 @@
+.customize-control-wdt-spacing .customize-control-title { width: 100%; }
+.customize-control-wdt-spacing .customize-control-title { display: inline-block; vertical-align: middle; }
+.customize-control-wdt-spacing .customize-control-title .item-reset { float: right; font-size: 15px; position: relative; top: 5px; }
+.customize-control-wdt-spacing .item-reset:hover, .customize-control-wdt-spacing .item-reset:focus { color: red; }
+.customize-control-wdt-spacing .control-wrap { display: block; }
+
+.customize-control-wdt-spacing .control-wrap label { pointer-events: none; }
+.customize-control-wdt-spacing .wdt-spacing-link span { clear: both; }
+.customize-control-wdt-spacing .wdt-spacing-link span.wdt-spacing-connected { display:none; }
+.customize-control-wdt-spacing .wdt-spacing-link.disconnected span.wdt-spacing-connected { display:block; }
+.customize-control-wdt-spacing .wdt-spacing-link.disconnected span.wdt-spacing-disconnected { display:none; }
+
+.customize-control-wdt-spacing .control-wrap ul { display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: -ms-flex; display: flex; -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly }
+
+.customize-control-wdt-spacing .control-wrap ul li.wdt-spacing-link { width: 45px !important; }
+.customize-control-wdt-spacing .control-wrap ul li.wdt-spacing-link span { border: 1px solid rgba(0,0,0,0.15); font-size: 14px; height: 28px; line-height: 28px; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.customize-control-wdt-spacing .control-wrap ul li select { padding-bottom: 0; padding-top: 0; width: 100%; }
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(1) {
+  width: 100%;
+}
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(2),
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(2) ~ li {
+  width: 50%;
+}
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(3),
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(3) ~ li {
+  width: 33.3333%;
+}
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(4),
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(4) ~ li {
+  width: 25%;
+}
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(5),
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(5) ~ li {
+  width: 20%;
+}
+
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(6),
+.customize-control-wdt-spacing .control-wrap ul li:first-child:nth-last-child(6) ~ li {
+  width: 16.67%;
+}

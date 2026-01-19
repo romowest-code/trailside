@@ -1,0 +1,24 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Single Tabs Exploded */
+/*--------------------------------------------------------------*/
+
+.woocommerce div.product .wdt-product-tabs.wdt-product-tabs-exploded { margin: 5px 0 0; }
+
+.woocommerce div.product .wdt-product-tabs-exploded > h2 { font-size: 1.6em; margin-bottom: 30px; padding-bottom: 15px; position: relative; text-align: center; text-transform:none; word-wrap: break-word; -ms-word-wrap: break-word; }
+
+
+.wdt-product-tabs-exploded.wdt-product-hide-tab-title > h2,
+.wdt-product-tabs-exploded.wdt-product-hide-tab-title .woocommerce-Reviews-title { display: none; }
+
+
+.woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded table.shop_attributes,
+.woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded .comment-respond form,
+.woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded .comment-respond form p:last-child { margin-bottom: 0; }
+
+.woocommerce div.product .wdt-product-tabs-exploded > h2:before { bottom: 0; content: ''; display: block; height: 1px; left: 0; margin: 0 auto; position: absolute; right: 0; width: 40px; }
+
+
+.woocommerce div.product .wdt-product-tabs-exploded > h2:before { background-color: rgba(var(--wdtHeadAltColorRgb),0.15); }
+
+/* #endregion - Product Single Tabs Exploded */

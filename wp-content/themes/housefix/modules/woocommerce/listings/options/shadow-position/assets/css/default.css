@@ -1,0 +1,26 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Shadow Position */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-shadow-type-default.product-shadow-position-default  li.product .product-wrapper,
+    .woocommerce ul.products.product-shadow-type-thumb.product-shadow-position-default  li.product .product-wrapper .product-thumb { -webkit-box-shadow: 0 0 5px 1px #ccc; box-shadow: 0 0 5px 1px #ccc; }
+
+    .woocommerce ul.products.product-shadow-type-default.product-shadow-position-default li.product.product-grid-view .product-details { padding: 0 15px 25px; }
+
+
+/* #endregion - Product Listing - Shadow Position */
+
+
+/*--------------------------------------------------------------*/
+    /* #region - Accents */
+/*--------------------------------------------------------------*/
+
+    /* Primary */
+    .woocommerce ul.products.product-shadow-type-default.product-shadow-position-default.product-bordershadow-highlight-default li.product .product-wrapper,
+    .woocommerce ul.products.product-shadow-type-thumb.product-shadow-position-default.product-bordershadow-highlight-default li.product .product-wrapper .product-thumb,
+
+    .woocommerce ul.products.product-shadow-type-default.product-shadow-position-default.product-bordershadow-highlight-onhover li.product:hover .product-wrapper,
+    .woocommerce ul.products.product-shadow-type-thumb.product-shadow-position-default.product-bordershadow-highlight-onhover li.product:hover .product-wrapper .product-thumb { -webkit-box-shadow: 0 0 5px 1px var(--wdtPrimaryColor); box-shadow: 0 0 5px 1px var(--wdtPrimaryColor); }
+
+/* #endregion - Accents */

@@ -1,0 +1,12 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Without Space */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-without-space, .woocommerce ul.products.product-without-space:not(.swiper-wrapper) { float: left; margin: 0; width: 100%; }
+
+    .woocommerce ul.products.product-without-space li .wdt-col { padding: 0; }
+
+    .woocommerce ul.products.product-without-space li.product .featured-tag { left: 1px; }
+
+/* #endregion - Product Listing - Without Space */

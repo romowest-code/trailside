@@ -1,0 +1,137 @@
+/*--------------------------------------------------------------
+    Loader
+--------------------------------------------------------------*/
+
+    .pre-loader {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999991;
+        background-color: var(--wdtBodyBGColor);
+    }
+
+    .loader-inner {
+        padding: 25px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .pre-loader.loader3
+    {
+        font-size: 1.6rem;
+        background: var(--wdtBodyBGColor);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+    .clearfix:before,
+    .clearfix:after {
+    content: " ";
+    display: table;
+    }
+
+    .clearfix:after {
+    clear: both;
+    }
+
+    .clearfix {
+    zoom: 1;
+    }
+    .loader3-glass {
+    display: block;
+    background: var(--wdtBodyBGColor);
+    margin: 3em auto;
+    width: 2em;
+    height: 4em;
+    -webkit-animation: hourglass 1.5s linear infinite;
+    animation: hourglass 1.5s linear infinite;
+    }
+  
+    .loader3-outer {
+        fill: var(--wdtPrimaryColor);
+    }
+    
+    .loader3-middle {
+        fill: var(--wdtBodyBGColor);
+    }
+  
+  @-webkit-keyframes hourglass {
+    0% {
+      transform: rotate(0deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 0em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -4em 0 0;
+    }
+    80% {
+      transform: rotate(0deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 -2em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -2em 0 0;
+    }
+    100% {
+      transform: rotate(180deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 -2em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -2em 0 0;
+    }
+  }
+  
+  @keyframes hourglass {
+    0% {
+      transform: rotate(0deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 0em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -4em 0 0;
+    }
+    80% {
+      transform: rotate(0deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 -2em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -2em 0 0;
+    }
+    100% {
+      transform: rotate(180deg);
+      box-shadow: inset var(--wdtPrimaryColor) 0 -2em 0 0, inset var(--wdtBodyBGColor) 0 -2em 0 0, inset var(--wdtPrimaryColor) 0 -2em 0 0;
+    }
+  }
+
+
+
+
+/*--------------------------------------------------------------
+    Accents
+--------------------------------------------------------------*/
+
+    .pre-loader { background-color: var(--wdtBodyBGColor); }
+    .loader-text { background-image: linear-gradient(to right, var(--wdtPrimaryColor) 10%, var(--wdtHeadAltColor) 50%, var(--wdtPrimaryColor) 60%); }
+
+
+/*--------------------------------------------------------------
+    Responsive
+--------------------------------------------------------------*/
+
+    /*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    }
+
+
+    /* Common Styles for the devices below 479px width */
+
+    @media only screen and (max-width: 479px) {
+
+    }

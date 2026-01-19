@@ -1,0 +1,45 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Labels */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products li.product .onsale, .woocommerce ul.products li.product .out-of-stock, .woocommerce ul.products li.product .product-labels > span { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px; margin: 0; padding: 0; position: relative; left: auto; top: auto; text-align: center; text-transform: uppercase; }
+
+    .woocommerce ul.products li.product .out-of-stock { font-size: 9px; }
+    .woocommerce ul.products li.product .product-labels .new { background-color: indianred; color: var(--wdtAccentTxtColor); }
+    .woocommerce ul.products li.product .product-labels span span { display: inline-block; width: 100%; }
+
+    .woocommerce ul.products li.product .product-labels { position: absolute; right: 0; top: 0; text-align: right; z-index: 2; }
+
+
+    /* Featured */
+    .woocommerce ul.products li.product .featured-tag { height: 25px; line-height: 25px; position: absolute; left: 0; top: 10px; z-index: 9; }
+
+    .woocommerce.single-product .images .featured-tag, .wdt-product-image-gallery-container .featured-tag { height: 25px; line-height: 25px; position: absolute; right: 0; top: 0; z-index: 9; }
+
+    .woocommerce ul.products li.product .featured-tag i,
+    .woocommerce.single-product .images .featured-tag i, .wdt-product-image-gallery-container .featured-tag i { font-size: 12px; line-height: inherit; position: absolute; right: 6px; }
+
+    .woocommerce ul.products li.product .featured-tag > div,
+    .woocommerce.single-product .images .featured-tag > div, .wdt-product-image-gallery-container .featured-tag > div { height: 100%; line-height: inherit; position: relative; width: 25px; z-index: 99; -webkit-transition: width 0.1s cubic-bezier(0.86, 0, 0.07, 1) 0.05s; transition: width 0.1s cubic-bezier(0.86, 0, 0.07, 1) 0.05s; }
+
+    .woocommerce ul.products li.product .featured-tag span,
+    .woocommerce.single-product .images .featured-tag span, .wdt-product-image-gallery-container .featured-tag span { display: none; float: left; font-weight: 400; overflow: hidden; padding-right: 20px; width: 3em; -webkit-transition-delay: 0s, 0s, 0s; transition-delay: 0s, 0s, 0s; -webkit-transition-duration: 0.3s, 0.25s, 0.25s; transition-duration: 0.3s, 0.25s, 0.25s; -webkit-transition-property: opacity, padding, width; transition-property: opacity, padding, width; -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1); transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1); }
+
+    .woocommerce ul.products li.product:hover .featured-tag > div span,
+    .woocommerce.single-product .images .featured-tag > div span, .wdt-product-image-gallery-container .featured-tag > div span { padding-left: 10px; width: 100%; }
+
+    .woocommerce ul.products li.product .featured-tag:after,
+    .woocommerce.single-product .images .featured-tag:after, .wdt-product-image-gallery-container .featured-tag:after { background-color: transparent; border-style: solid; border-width: 12px; content: ""; position: absolute; bottom: 0; right: -15px; top: 0; z-index: 9; }
+
+    .woocommerce.single-product .images .featured-tag:after, .wdt-product-image-gallery-container .featured-tag:after { left: -15px; right: auto; }
+
+
+    .woocommerce ul.products.product-without-space li.product .featured-tag,
+    .woocommerce ul.products.product-without-space.product-border-type-default.product-border-position-default li.product .featured-tag,
+    .woocommerce ul.products.product-without-space.product-border-type-thumb.product-border-position-default li.product .featured-tag { left: 1px; }
+
+    .woocommerce ul.products.product-without-space.product-border-type-default.product-border-position-default li.product .featured-tag,
+    .woocommerce ul.products.product-without-space.product-border-type-thumb.product-border-position-default li.product .featured-tag { top: 1px; }
+
+/* #endregion - Product Listing - Labels */

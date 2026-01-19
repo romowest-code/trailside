@@ -1,0 +1,9 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Thumb IconsGroup Style */
+/*--------------------------------------------------------------*/
+    
+    .woocommerce ul.products[class*="product-thumb-iconsgroup-style-skinbgfill"] li.product .product-thumb .product-buttons-wrapper.product-icons .wc_inline_buttons .wc_btn_inline { margin: 2px; }
+
+    
+/* #endregion - Thumb IconsGroup Style */        

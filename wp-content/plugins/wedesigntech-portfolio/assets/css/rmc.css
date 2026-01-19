@@ -1,0 +1,75 @@
+form.lidd_mc_form {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+}
+
+form.lidd_mc_form .lidd_mc_input {
+    margin-bottom: 0;
+    position: relative;
+}
+
+form.lidd_mc_form .lidd_mc_input input[type="submit"] {
+    margin: 0;
+}
+
+form.lidd_mc_form .lidd_mc_input:not(.lidd_mc_input_responsive) {
+    grid-column-end: span 4;
+    display: flex;
+    justify-content: center;
+}
+
+#lidd_mc_inspector {
+    display: none;
+}
+
+.lidd_mc_details {
+    padding: 45px 30px;
+    margin-top: 40px;
+}
+
+.lidd_mc_details .lidd_mc_summary {
+    padding: 0;
+    margin: 0;
+}
+
+.lidd_mc_details .lidd_mc_summary p:not(:last-child),
+.lidd_mc_details .lidd_mc_results p {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+
+/*----*****---- << Tablet (Portrait) >> ----*****----*/
+
+
+/* Note: Design for a width of 1024px */
+
+@media only screen and (max-width:1024px) {
+    form.lidd_mc_form {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-columns: auto;
+        justify-content: space-between;
+    }
+    form.lidd_mc_form .lidd_mc_input:not(.lidd_mc_input_responsive) {
+        width: 100%;
+    }
+    form.lidd_mc_form .lidd_mc_input {
+        width: calc(50% - 20px);
+    }
+}
+
+
+/*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+
+/* Common Styles for the devices below 767px width */
+
+@media only screen and (max-width: 767px) {
+    form.lidd_mc_form .lidd_mc_input {
+        width: 100%;
+    }
+}

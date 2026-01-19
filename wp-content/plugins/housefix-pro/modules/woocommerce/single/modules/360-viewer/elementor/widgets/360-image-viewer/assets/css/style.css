@@ -1,0 +1,88 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Images 360-deg Viewer */
+/*--------------------------------------------------------------*/
+	.wdt-product-image-360-viewer-holder, .wdt-product-image-360-viewer-container { float: left; overflow: hidden; position: relative; width: 100%; }
+	.wdt-product-image-360-viewer-holder > img { margin: auto; }
+	.wdt-product-image-360-viewer-container {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+
+	#wdt-product-image-360-viewer { background-position: center center; background-repeat: no-repeat; background-size: contain; cursor: e-resize; display: block; margin: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; width: 100%; }
+	.wdt-product-image-360-viewer img { margin: auto; position: absolute; bottom: 0; left: 0; right: 0; top: 0; visibility: hidden; }
+
+	.wdt-product-image-360-popup-viewer { background-color: rgba(var(--wdtHeadAltColorRgb),0.95); height: 100%; padding-top: 45px; position: fixed; left: 0; top: 0; width: 100%; z-index: 100; }
+	.wdt-product-image-360-popup-viewer .wdt-product-image-360-viewer { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-container:not(.wdt-product-image-360-popup-viewer) { display: none; }
+
+
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger { font-size: 0; opacity: 0; position: absolute; left: 5px; top: 5px; height: 45px; line-height: 45px; text-align: center; visibility: hidden; width: 45px; z-index: 5; -webkit-transform: scale(0); transform: scale(0); -webkit-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger:before { color: var(--wdtAccentTxtColor); content: "\e802"; display: inline-block; font-family: "HouseFix Icons"; font-size: 16px; height: 100%; width: 100%; }
+
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger,
+	.wdt-product-image-360-popup-viewer-holder:hover .wdt-product-image-360-viewer-enlarger { margin: auto; bottom: 0; left: 0; right: 0; top: 0; }
+
+	.wdt-product-image-360-popup-viewer-holder:hover .wdt-product-image-360-viewer-enlarger,
+	.woocommerce-product-gallery:hover .wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger { -webkit-transform: scale(1); transform: scale(1); }
+
+	.wdt-product-image-360-popup-viewer-holder:hover .wdt-product-image-360-viewer-enlarger { opacity: 1; left: 12px; top: 12px; visibility: visible; -webkit-border-radius: 50%; border-radius: 50%; }
+
+	.woocommerce-product-gallery:hover .wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger { cursor: pointer; opacity: 1; left: 0px; top: 0; visibility: visible;   -webkit-border-radius: 50%; border-radius: 50%; }
+
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger,
+	.wdt-product-image-360-popup-viewer-holder:hover .wdt-product-image-360-viewer-enlarger:hover { -webkit-border-radius: 5px; border-radius: 5px; }
+
+
+	.wdt-product-image-360-popup-viewer .wdt-product-image-360-viewer-close { font-size: 0; height: 35px; line-height: 35px; opacity: 0; position: absolute; right: 0; top: 0; text-align: center; text-indent: -9999px; width: 35px; transition: var(--wdtBaseTransition); }
+
+	.wdt-product-image-360-viewer-close:before { color: var(--wdtAccentTxtColor); content: "\e802"; display: block; font-family: 'HouseFix Icons' !important; font-size: 35px; text-indent: 0; }
+
+	.wdt-product-image-360-popup-viewer:hover .wdt-product-image-360-viewer-close { opacity: 1; right: 5px; top: 5px; }
+
+	.logged-in.admin-bar .wdt-product-image-360-popup-viewer .wdt-product-image-360-viewer-close { top: 32px; }
+	.logged-in.admin-bar .wdt-product-image-360-popup-viewer:hover .wdt-product-image-360-viewer-close { top: 37px; }
+
+	.woocommerce-product-gallery .wdt-product-image-360-viewer-holder { position: absolute; left: 10px; top: 60px; height: 45px; width: 45px; }
+
+/* #endregion - Product Images 360-deg Viewer */
+
+/*--------------------------------------------------------------*/
+    /* #region - Accents */
+/*--------------------------------------------------------------*/
+
+	/* Primary */
+	.wdt-product-image-360-popup-viewer-holder .wdt-product-image-360-viewer-enlarger { background-color: rgba(var(--wdtPrimaryColorRgb),0.75) }
+
+/* #endregion - Accents */
+
+
+/*--------------------------------------------------------------*/
+    /* #region - Responsive */
+/*--------------------------------------------------------------*/
+
+	/*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+	/* Common Styles for the devices below 767px width */
+	@media only screen and (max-width: 767px) {
+
+		#wdt-product-image-360-viewer { width: 100% !important; }
+		#wdt-product-image-360-viewer:before { content: ""; display: block; padding-top: 100%; }
+
+	}
+
+/* #endregion - Responsive */

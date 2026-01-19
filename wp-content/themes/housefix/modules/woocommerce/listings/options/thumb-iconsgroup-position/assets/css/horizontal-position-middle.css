@@ -1,0 +1,48 @@
+
+/*--------------------------------------------------------------*/
+   /* #region - Thumb IconsGroup Position */
+/*--------------------------------------------------------------*/
+
+   .woocommerce ul.products[class*="product-thumb-iconsgroup-position"] li.product .product-thumb .product-buttons-wrapper.product-icons { margin: 5px; width: auto; }
+
+   .woocommerce ul.products.product-thumb-iconsgroup-position-horizontal li.product .product-thumb .product-element-group-wrapper .product-buttons-wrapper.product-icons,
+
+   .woocommerce ul.products.product-thumb-iconsgroup-position-horizontal li.product .product-details .product-element-group-wrapper .product-buttons-wrapper.product-icons { position: static; }
+
+
+   .woocommerce ul.products.product-thumb-iconsgroup-position-horizontal li.product .product-thumb .product-element-group-wrapper .product-buttons-wrapper.product-icons .wc_inline_buttons > .wc_btn_inline,
+
+   .woocommerce ul.products.product-thumb-iconsgroup-position-horizontal li.product .product-details .product-element-group-wrapper .product-buttons-wrapper.product-icons .wc_inline_buttons > .wc_btn_inline { display: inline-block; }
+
+
+   .woocommerce ul.products.horizontal-position-middle li.product .product-thumb .product-buttons-wrapper.product-icons { left: 0; right: 0; text-align: center; }
+
+   .woocommerce ul.products[class*="position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons { margin: auto; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); }
+
+
+   /* Hover Style - IconGroup - Bounce */
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons a,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons a.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons button.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product .product-thumb .product-buttons-wrapper.product-icons .button {
+      -webkit-transform: scale(0);
+         -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0); 
+               transform: scale(0);
+   }
+
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons a,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons a.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons button.button,
+   .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-position-horizontal[class*="horizontal-position-middle"] li.product:hover .product-thumb .product-buttons-wrapper.product-icons .button {
+      -webkit-transform: scale(1);
+         -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1); 
+               transform: scale(1);
+   }
+
+/* #endregion - Thumb IconsGroup Position */    

@@ -1,0 +1,19 @@
+
+
+/*--------------------------------------------------------------
+    Slider
+--------------------------------------------------------------*/
+
+    #slider {
+        clear: both;
+        display: block;
+        float: left;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #slider img {
+        max-width: 100%;
+    }

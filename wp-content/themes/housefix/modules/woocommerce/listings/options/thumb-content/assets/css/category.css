@@ -1,0 +1,10 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Thumb Category */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products li.product .product-thumb .product-category-wrapper a { font-size: 16px; letter-spacing: 0; margin: 0 0 3px 3px; }
+    .woocommerce ul.products li.product .product-thumb .product-category-wrapper a:first-child { margin-left: 0; }
+    .woocommerce ul.products li.product .product-thumb .product-category-wrapper a:hover { text-decoration: underline; }
+
+/* #endregion - Product Listing - Thumb Category */

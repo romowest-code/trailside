@@ -1,0 +1,18 @@
+/*--------------------------------------------------------------*/
+    /* #region - Product Content Offer / Percentage */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products li.product .product-offers { position: absolute; top: 10px; text-align: center; z-index: 9; }
+
+    .woocommerce ul.products li.product .product-offers { height: 25px; right: 5px; min-width: 50px; min-height: 25px; }
+    .woocommerce ul.products li.product .product-offers .product-saved-sale { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px;
+    line-height: 25px; padding: 0 10px; text-transform: uppercase; vertical-align: middle; }
+    .woocommerce ul.products li.product .product-offers .product-saved-sale:before { content: '\f0eb'; display: inline-block; font-family: 'HouseFix Icons'; font-size: 14px; margin-right: 10px; font-weight: 100; vertical-align: top; }
+
+    .woocommerce ul.products li.product .product-details .product-offers { display: inline-block; float: none; line-height: normal; position: static; text-align: inherit; width: auto; }
+
+    .woocommerce ul.products li.product .product-offers { background: #89318f; color: var(--wdtAccentTxtColor); }
+
+    .woocommerce ul.products.product-label-rounded li.product .product-offers { border-radius: 5px; }
+
+/* #endregion - Product Thumb Offer / Percentage */

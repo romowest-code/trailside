@@ -1,0 +1,66 @@
+.icons-container { display:none; }
+
+.customize-control-wdt-fontawesome .selector { border: 1px solid #ddd; background-color: #fff; font-size: 16px; width: 100px; height: 40px; }
+
+.customize-control-wdt-fontawesome .selected-icon {
+    display: block;
+    width: 60px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+
+.customize-control-wdt-fontawesome .selected-icon i {
+	line-height: 40px;
+}
+
+.customize-control-wdt-fontawesome .selector-button {
+    width: 39px;
+    height: 100%;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    background-color: #f4f4f4;
+	border-left: 1px solid #ddd;
+	color: #999;
+}
+
+.customize-control-wdt-fontawesome .selector-button i {
+	line-height: 38px;
+}
+
+.customize-control-wdt-fontawesome .icons-container {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    overflow: auto;
+    max-height: 228px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+}
+
+.customize-control-wdt-fontawesome .icons-container .fip-box {
+    display: inline-block;
+    margin: 1px;
+    width: 51px;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+    height: 40px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.customize-control-wdt-fontawesome .icons-container .fip-box i {
+	line-height: 42px;
+}
+
+.customize-control-wdt-fontawesome .icons-container .fip-box:hover {
+	background-color: #ededed;
+}

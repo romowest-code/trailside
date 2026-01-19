@@ -1,0 +1,32 @@
+@media print {
+    @page {
+        size: A4 landscape;
+    }
+    @page :left {
+        margin-left: 3cm;
+    }
+    @page :right {
+        margin-left: 4cm;
+    }
+}
+
+.comment-respond,
+.wdt-listings-comment-list-holder .commentlist li.comment .comment-body .reply,
+.wdt-listings-utils-favourite,
+.wdt-listings-utils-print,
+.wdt-listings-utils-socialshare,
+.wdt-listings-addtocart-container {
+    display: none;
+}
+
+.wdt-listings-comment-list-holder .commentlist>li.comment:last-child article.comment-body {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+article.wdt_listings {
+    margin: 100px 0;
+    width: 100%;
+    float: left;
+}

@@ -1,0 +1,36 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Thumb Content Alignment */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-thumb-alignment-top-left li.product .product-thumb-content { text-align: left; }
+
+    .woocommerce ul.products.product-thumb-alignment-top-left li.product .product-thumb:before { padding-top: 0; padding-bottom: 0; }
+
+    .woocommerce ul.products.product-thumb-alignment-top-left.product-label-boxed li.product .product-thumb-content,
+    .woocommerce ul.products.product-thumb-alignment-top-left.product-label-rounded li.product .product-thumb-content,
+    .woocommerce ul.products.product-thumb-alignment-top-left.product-label-angular li.product .product-thumb-content,
+    .woocommerce ul.products.product-thumb-alignment-top-left.product-label-ribbon li.product .product-thumb-content,
+    .woocommerce ul.products.product-thumb-alignment-top-left.product-label-circle li.product .product-thumb-content { padding-right: 60px; }
+
+
+    /* Hover Style - IconGroup - Bounce */
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product .product-thumb .product-buttons-wrapper.product-icons .button { bottom: auto; top: -60px; visibility: hidden; }
+
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons .button { top: 0; visibility: visible; }
+
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons a.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons button.button,
+    .woocommerce ul.products.product-icongroup-hover-bounce.product-thumb-iconsgroup-style-simple[class*="thumb-alignment-top"]:not([class*="product-thumb-iconsgroup-position"]) li.product:hover .product-thumb .product-buttons-wrapper.product-icons .button { bottom: auto; top: 0; }
+
+/* #endregion - Product Listing - Thumb Content Alignment */

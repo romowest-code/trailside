@@ -1,0 +1,17 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Custom Type Labels & Offer Labels */
+/*--------------------------------------------------------------*/
+
+.woocommerce ul.products li.product .product-custom-type { position: absolute; top: 10px; text-align: center; z-index: 9; }
+
+.woocommerce ul.products li.product .product-custom-type { height: 25px; left: 5px; min-width: 50px; min-height: 25px; }
+
+.woocommerce ul.products li.product .product-custom-type .product-custom-type-label { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 1px;
+line-height: 25px; padding: 0 10px; text-transform: uppercase; }
+
+.woocommerce ul.products li.product .product-custom-type .product-custom-type-label { background: #7da754; color: var(--wdtAccentTxtColor); }
+
+.woocommerce ul.products.product-label-rounded li.product .product-custom-type .product-custom-type-label { border-radius: 5px; }
+
+/* #endregion - Product Custom Type Labels & Offer Labels */

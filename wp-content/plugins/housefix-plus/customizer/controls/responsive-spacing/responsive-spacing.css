@@ -1,0 +1,55 @@
+.customize-control-wdt-responsive-spacing .customize-control-title { width: 100%; }
+.customize-control-wdt-responsive-spacing .customize-control-title,
+.customize-control-wdt-responsive-spacing .wdt-responsive-spacing-switcher { display: inline-block; vertical-align: middle; }
+.customize-control-wdt-responsive-spacing .customize-control-title .item-reset { float: right; font-size: 15px; position: relative; top: 5px; }
+.customize-control-wdt-responsive-spacing .item-reset:hover, .customize-control-wdt-responsive-spacing .item-reset:focus { color: red; }
+.customize-control .wdt-responsive-spacing-switcher { margin-left:5px; position: relative; top: -1px; width:auto; }
+.customize-control.wdt-responsive-spacing-switcher-open .wdt-responsive-spacing-switcher li { display:block; }
+.customize-control .wdt-responsive-spacing-switcher li { float:left; margin:0; }
+.customize-control .wdt-responsive-spacing-switcher li button { float: left; height:20px; width:20px; background-color:#a4afb7; position:relative; margin-left:5px; margin-bottom: auto; margin-top: auto; color:#fff; font-size:10px; text-align:center; border-radius:50%; border:0; outline:0; -webkit-transition:background-color .5s; transition:background-color .5s; cursor:pointer; padding:0; }
+.customize-control .wdt-responsive-spacing-switcher li button:hover { background-color:#c2cbd2; }
+.customize-control .wdt-responsive-spacing-switcher li button.active { background-color:#13aff0; }
+.customize-control .wdt-responsive-spacing-switcher li button i { width:auto; height:auto; font-size:inherit; line-height:18px; }
+.customize-control-wdt-responsive-spacing .control-wrap:not(.active) { display: none; }
+
+.customize-control-wdt-responsive-spacing .control-wrap label { pointer-events: none; }
+.customize-control-wdt-responsive-spacing .wdt-spacing-link span { clear: both; }
+.customize-control-wdt-responsive-spacing .wdt-spacing-link span.wdt-spacing-connected { display:none; }
+.customize-control-wdt-responsive-spacing .wdt-spacing-link.disconnected span.wdt-spacing-connected { display:block; }
+.customize-control-wdt-responsive-spacing .wdt-spacing-link.disconnected span.wdt-spacing-disconnected { display:none; }
+
+.customize-control-wdt-responsive-spacing .control-wrap ul { display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: -ms-flex; display: flex; -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end; -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly }
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li.wdt-spacing-link { width: 45px !important; }
+.customize-control-wdt-responsive-spacing .control-wrap ul li.wdt-spacing-link span { border: 1px solid rgba(0,0,0,0.15); font-size: 14px; height: 28px; line-height: 28px; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li select { padding-bottom: 0; padding-top: 0; }
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(1) {
+  width: 100%;
+}
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(2),
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(2) ~ li {
+  width: 50%;
+}
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(3),
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(3) ~ li {
+  width: 33.3333%;
+}
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(4),
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(4) ~ li {
+  width: 25%;
+}
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(5),
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(5) ~ li {
+  width: 20%;
+}
+
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(6),
+.customize-control-wdt-responsive-spacing .control-wrap ul li:first-child:nth-last-child(6) ~ li {
+  width: 16.67%;
+}

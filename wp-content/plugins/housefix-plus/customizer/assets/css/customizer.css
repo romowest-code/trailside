@@ -1,0 +1,59 @@
+.dependency-hidden { display:none !important; }
+
+#customize-control-wdt-settings-custom-logo button.default-button,#customize-control-wdt-settings-custom-alternate-logo button.default-button { display:none; }
+
+/* Footer - extra responsive control  */
+.wp-full-overlay-footer .devices .preview-tablet-landscape::before { content : "\f471"; }
+.wp-full-overlay-footer .devices .preview-tablet-landscape::before, .wdt-responsive-switchers .preview-tablet-landscape > i::before {
+	display: inline-block;
+	transform: rotate(-90deg);
+}
+.preview-tablet-landscape .wp-full-overlay-main {
+	margin: auto 0 auto -540px;
+    width: 1080px;
+    height: 720px;
+    max-height: 100%;
+    max-width: 100%;
+    left: 50%;
+}
+
+/* Nested Panel and Section */
+.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent, #customize-theme-controls .customize-pane-child.current-section-parent {
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+#customize-controls .control-section.control-section-housefix_extended_section .accordion-section-title {
+    color: #555d66;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    border-left: 4px solid #fff;
+    -webkit-transition: .15s color ease-in-out, .15s background-color ease-in-out, .15s border-color ease-in-out;
+    transition: .15s color ease-in-out, .15s background-color ease-in-out, .15s border-color ease-in-out;
+}
+
+#customize-controls .control-section.control-section-housefix_extended_section .accordion-section-title:after {
+    color: #a0a5aa;
+}
+
+#customize-controls .control-section.control-section-housefix_extended_section .accordion-section-title:hover,
+#customize-controls .control-section.control-section-housefix_extended_section .accordion-section-title:focus {
+    color: #0073aa;
+    background: #f3f3f5;
+    border-left-color: #0073aa;
+}
+
+#customize-controls .control-section.control-section-housefix_extended_section .accordion-section-title:hover:after {
+    color: #0073aa;
+}
+
+#customize-controls .control-section-housefix_extended_section .accordion-section {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+input[type=checkbox], input[type=checkbox]:focus, input[type=color], input[type=color]:focus, input[type=date], input[type=date]:focus, input[type=datetime-local], input[type=datetime-local]:focus, input[type=datetime], input[type=datetime]:focus, input[type=email], input[type=email]:focus, input[type=month], input[type=month]:focus, input[type=number], input[type=number]:focus, input[type=password], input[type=password]:focus, input[type=radio], input[type=radio]:focus, input[type=search], input[type=search]:focus, input[type=tel], input[type=tel]:focus, input[type=text], input[type=text]:focus, input[type=time], input[type=time]:focus, input[type=url], input[type=url]:focus, input[type=week], input[type=week]:focus, select, select:focus, textarea, textarea:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

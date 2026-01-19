@@ -1,0 +1,24 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing Style */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper { display: table; margin: 0; width: 100%; }
+    .woocommerce ul.products.product-style-content-highlighter.product-padding-content li.product .product-details > .product-element-group-wrapper:first-child { margin-top: -5px; }
+    .woocommerce ul.products.product-style-content-highlighter.product-padding-content li.product .product-details > .product-element-group-wrapper:last-child { margin-bottom: -5px; }
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper .product-element-group-items { display: table-cell; padding: 0 10px; vertical-align: middle; }
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper .product-element-group-items .product-title h5 a { padding: 8px 0; }
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2) { width: 66.66%; }
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { text-align: center !important; width: 33.33%; }
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-details .product-element-group-wrapper .product-element-group-items:empty { display: none; }
+
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { background-color: rgba(var(--wdtHeadAltColorRgb),0.075); }
+
+    .woocommerce ul.products.product-style-content-highlighter li.product .product-element-group-wrapper { background-color: rgba(var(--wdtHeadAltColorRgb),0.09); }
+
+
+/* #endregion - Product Listing Style */

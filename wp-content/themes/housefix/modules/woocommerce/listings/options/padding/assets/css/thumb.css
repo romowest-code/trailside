@@ -1,0 +1,14 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing - Padding Options */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-padding-thumb li.product .product-thumb .image { padding: 10px; }
+    
+    .woocommerce ul.products.product-padding-thumb.product-thumb-bg-image li.product .product-thumb .image { margin: 10px; }
+
+    .woocommerce ul.products.product-padding-thumb li.product .product-wrapper { padding: 0; }
+
+    .woocommerce ul.products.product-padding-thumb li.product .product-details { padding-left: 0; padding-right: 0; }
+
+/* #endregion - Product Listing - Padding Options */

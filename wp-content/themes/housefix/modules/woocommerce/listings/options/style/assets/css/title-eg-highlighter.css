@@ -1,0 +1,47 @@
+
+/*--------------------------------------------------------------*/
+    /* #region - Product Listing Style */
+/*--------------------------------------------------------------*/
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-title h5 a { padding: 10px; }
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details > .product-title:first-child,
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details > .product-price:last-child { margin-top: -1px; margin-bottom: 15px; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details > .product-title:only-child { margin: 0; }
+
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper  { display: block; border-width: 0; float: none; margin: 0 -10px; margin: 0; position: relative; width: auto; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter.product-padding-content li.product .product-details > .product-element-group-wrapper:first-child { margin-top: -5px; }
+    .woocommerce ul.products.product-style-title-eg-highlighter.product-padding-content li.product .product-details > .product-element-group-wrapper:last-child { margin-bottom: -5px; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper .product-element-group-items { position: absolute; left: 0; top: 50%; width: 100%; -webkit-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1),
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product.product-list-view.product-list-right-thumb .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product.product-list-view.product-list-right-thumb .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { display: inline-block; vertical-align: middle; width: 100%; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product.product-list-view.product-list-right-thumb .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2) { text-align: inherit; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product.product-list-view.product-list-right-thumb .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { text-align: center; }
+
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product:hover .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { opacity: 0; visibility: hidden; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper > div:nth-child(1):nth-last-child(2),
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product:hover .product-details .product-element-group-wrapper > div:nth-child(2):nth-last-child(1) { opacity: 1; visibility: visible; }
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper .product-buttons-wrapper { vertical-align: middle; }
+
+
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details > .product-title h5 a,
+    .woocommerce ul.products.product-style-title-eg-highlighter li.product .product-details .product-element-group-wrapper { background-color: rgba(var(--wdtHeadAltColorRgb),0.075); }
+
+
+/* #endregion - Product Listing Style */
