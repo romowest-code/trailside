@@ -207,17 +207,63 @@ TERMS_BODY = """
 """
 
 
+POLICY_CSS = """
+.policy-content {
+  max-width: 920px;
+  margin: 60px auto 100px;
+  padding: 0 24px;
+  color: #d8d8d8;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.policy-content .policy-meta {
+  color: #b0b0b0;
+  margin: 0 0 2.2em 0;
+  padding-bottom: 1.4em;
+  border-bottom: 1px solid #1a3550;
+  font-size: 0.95em;
+}
+.policy-content .policy-meta strong { color: #ffffff; }
+.policy-content h2 {
+  color: #ffffff !important;
+  font-size: 1.65em;
+  margin: 2.4em 0 0.6em 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.policy-content h3 {
+  color: #e8e8e8 !important;
+  font-size: 1.2em;
+  margin: 1.8em 0 0.5em 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.policy-content p { margin: 0.9em 0; color: #d8d8d8; }
+.policy-content ul {
+  padding-left: 1.5em;
+  margin: 0.9em 0;
+  list-style: disc;
+}
+.policy-content li {
+  margin-bottom: 0.55em;
+  color: #d8d8d8;
+}
+.policy-content strong { color: #ffffff; font-weight: 700; }
+.policy-content a {
+  color: #4ec9d6;
+  text-decoration: underline;
+}
+.policy-content a:hover { color: #ffffff; }
+@media (max-width: 600px) {
+  .policy-content { font-size: 16px; padding: 0 18px; margin: 40px auto 60px; }
+  .policy-content h2 { font-size: 1.4em; }
+  .policy-content h3 { font-size: 1.12em; }
+}
+"""
+
+
 def build_main_section(page_title: str, effective: str, body_html: str) -> str:
     """Build the <div id="main">...</div> replacement that fits the site chrome."""
-    container_style = (
-        "max-width:920px;margin:60px auto 80px;padding:0 24px;"
-        "line-height:1.7;color:#444;"
-    )
-    h_color_style = "style=\"margin-top:2em;color:#072440;\""
-    intro_style = (
-        "color:#666;margin-bottom:2.5em;padding-bottom:1em;"
-        "border-bottom:1px solid #eaeaea;"
-    )
     return f'''<div id="main">
                 <div class="wdt-elementor-container-fluid">
                     <div data-elementor-type="wp-page" class="elementor elementor-policy-page">
@@ -226,9 +272,12 @@ def build_main_section(page_title: str, effective: str, body_html: str) -> str:
                                 <div class="elementor-column elementor-col-100 elementor-top-column">
                                     <div class="elementor-widget-wrap elementor-element-populated">
                                         <div class="elementor-widget elementor-widget-text-editor">
-                                            <div class="elementor-widget-container" style="{container_style}">
-                                                <p style="{intro_style}"><strong>Trailside Handyman</strong> (a service of Morod Corporation)<br><strong>Effective Date:</strong> {effective}<br><strong>Last Updated:</strong> {effective}</p>
-                                                {body_html}
+                                            <div class="elementor-widget-container">
+                                                <style>{POLICY_CSS}</style>
+                                                <div class="policy-content">
+                                                    <p class="policy-meta"><strong>Trailside Handyman</strong> (a service of Morod Corporation)<br><strong>Effective Date:</strong> {effective}<br><strong>Last Updated:</strong> {effective}</p>
+                                                    {body_html}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
