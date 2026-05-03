@@ -4,16 +4,27 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --c-navy: #072440;
-  --c-navy-2: #0a2d4d;          /* slightly lighter navy for utility bar */
-  --c-teal: #00AEEF;
-  --c-teal-dark: #0096cc;
-  --c-bg-light: #F7F7F5;
-  --c-text: #403f4b;
-  --c-text-muted: #7A7A7A;
-  --c-text-on-dark: #d8e1ec;
+  /* Surfaces */
+  --c-navy: #14223A;            /* charcoal-navy (primary dark) */
+  --c-navy-2: #1d2f4f;          /* slightly lighter, for utility bar */
+  --c-bg-light: #FAF6EE;        /* warm cream sections */
   --c-white: #ffffff;
-  --c-border-dark: #1a3550;
+  --c-border-dark: #2a3550;
+
+  /* Brand accents */
+  --c-accent: #E63946;          /* warm red — logo color, links, eyebrows */
+  --c-accent-dark: #C92D3A;
+  --c-highlight: #F4A261;       /* amber — primary CTAs and stats section */
+  --c-highlight-dark: #E08A45;
+
+  /* Legacy aliases (kept so component rules below still resolve) */
+  --c-teal: var(--c-accent);
+  --c-teal-dark: var(--c-accent-dark);
+
+  /* Text */
+  --c-text: #1A1A2E;
+  --c-text-muted: #5A5A6E;
+  --c-text-on-dark: #d8e1ec;
 
   --f-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -103,11 +114,11 @@ strong { font-weight: 700; }
   color: var(--c-navy);
 }
 .section--accent {
-  background: var(--c-teal);
-  color: var(--c-white);
+  background: var(--c-highlight);
+  color: var(--c-navy);
 }
 .section--accent h1, .section--accent h2, .section--accent h3 {
-  color: var(--c-white);
+  color: var(--c-navy);
 }
 .section__header { text-align: center; margin-bottom: 2.5em; }
 
@@ -128,17 +139,27 @@ strong { font-weight: 700; }
 }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 .btn:focus-visible {
-  outline: 3px solid var(--c-teal);
+  outline: 3px solid var(--c-highlight);
   outline-offset: 2px;
 }
 .btn--primary {
-  background: var(--c-teal);
-  color: var(--c-white);
-  border-color: var(--c-teal);
+  background: var(--c-highlight);
+  color: var(--c-navy);
+  border-color: var(--c-highlight);
 }
 .btn--primary:hover {
-  background: var(--c-teal-dark);
-  border-color: var(--c-teal-dark);
+  background: var(--c-highlight-dark);
+  border-color: var(--c-highlight-dark);
+  color: var(--c-navy);
+}
+.btn--accent {
+  background: var(--c-accent);
+  color: var(--c-white);
+  border-color: var(--c-accent);
+}
+.btn--accent:hover {
+  background: var(--c-accent-dark);
+  border-color: var(--c-accent-dark);
   color: var(--c-white);
 }
 .btn--ghost {
@@ -198,9 +219,8 @@ strong { font-weight: 700; }
   flex-shrink: 0;
 }
 .site-nav__logo img {
-  height: 48px;
+  height: 52px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 .site-nav__hamburger {
   background: transparent;
@@ -320,10 +340,9 @@ strong { font-weight: 700; }
 .site-footer__col a { color: var(--c-text-on-dark); }
 .site-footer__col a:hover { color: var(--c-teal); text-decoration: none; }
 .site-footer__brand img {
-  height: 48px;
+  height: 52px;
   width: auto;
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
 }
 .site-footer__social {
   display: flex;
@@ -396,7 +415,7 @@ strong { font-weight: 700; }
 .policy-content ul { padding-left: 1.5em; margin: 0.9em 0; list-style: disc; }
 .policy-content li { margin-bottom: 0.55em; color: #d8d8d8; }
 .policy-content strong { color: var(--c-white); }
-.policy-content a { color: #4ec9d6; text-decoration: underline; }
+.policy-content a { color: var(--c-highlight); text-decoration: underline; }
 .policy-content a:hover { color: var(--c-white); }
 
 /* ---------- Tablet ---------- */
