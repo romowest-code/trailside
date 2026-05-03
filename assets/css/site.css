@@ -197,7 +197,11 @@ strong { font-weight: 700; }
   align-items: center;
   flex-shrink: 0;
 }
-.site-nav__logo img { height: 44px; width: auto; }
+.site-nav__logo img {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
 .site-nav__hamburger {
   background: transparent;
   border: 0;
@@ -315,7 +319,12 @@ strong { font-weight: 700; }
 .site-footer__col ul { list-style: none; padding: 0; margin: 0; }
 .site-footer__col a { color: var(--c-text-on-dark); }
 .site-footer__col a:hover { color: var(--c-teal); text-decoration: none; }
-.site-footer__brand img { height: 44px; width: auto; margin-bottom: 16px; }
+.site-footer__brand img {
+  height: 48px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
 .site-footer__social {
   display: flex;
   gap: 12px;
