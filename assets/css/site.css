@@ -2,28 +2,28 @@
    Tokens, reset, typography, layout primitives, components.
    Mobile-first. Tablet at 600px, desktop at 1024px. */
 
-/* ---------- Tokens ---------- */
+/* ---------- Tokens (per trailside-design-spec.md) ---------- */
 :root {
   /* Surfaces */
-  --c-navy: #14223A;            /* charcoal-navy (primary dark) */
-  --c-navy-2: #1d2f4f;          /* slightly lighter, for utility bar */
-  --c-bg-light: #FAF6EE;        /* warm cream sections */
+  --c-navy: #1A2332;            /* deep navy/charcoal — hero, footer, nav */
+  --c-navy-2: #233044;          /* slightly lighter, for utility bar */
+  --c-bg-light: #F5F5F5;        /* light gray content sections */
   --c-white: #ffffff;
   --c-border-dark: #2a3550;
 
   /* Brand accents */
-  --c-accent: #E63946;          /* warm red — logo color, links, eyebrows */
-  --c-accent-dark: #C92D3A;
-  --c-highlight: #F4A261;       /* amber — primary CTAs and stats section */
-  --c-highlight-dark: #E08A45;
+  --c-accent: #2DD4C4;          /* teal — eyebrows, links, outlines, accents */
+  --c-accent-dark: #20B5A8;
+  --c-highlight: #F5A623;       /* warm gold/amber — primary CTAs */
+  --c-highlight-dark: #D88A0E;
 
   /* Legacy aliases (kept so component rules below still resolve) */
   --c-teal: var(--c-accent);
   --c-teal-dark: var(--c-accent-dark);
 
   /* Text */
-  --c-text: #1A1A2E;
-  --c-text-muted: #5A5A6E;
+  --c-text: #1A1A1A;
+  --c-text-muted: #6A6A6A;
   --c-text-on-dark: #d8e1ec;
 
   --f-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -114,13 +114,41 @@ strong { font-weight: 700; }
   color: var(--c-navy);
 }
 .section--accent {
-  background: var(--c-highlight);
-  color: var(--c-navy);
+  /* CTA band: dark navy with teal top accent (per spec 3.1 §3) */
+  background: var(--c-navy);
+  color: var(--c-white);
+  border-top: 4px solid var(--c-accent);
 }
 .section--accent h1, .section--accent h2, .section--accent h3 {
-  color: var(--c-navy);
+  color: var(--c-white);
 }
 .section__header { text-align: center; margin-bottom: 2.5em; }
+
+/* ---------- Feature card (value props) ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: var(--c-white);
+  border-left: 4px solid var(--c-accent);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-card);
+}
+.feature-card h3 {
+  color: var(--c-navy);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.feature-card p { margin: 0; color: var(--c-text); }
+@media (min-width: 768px) {
+  .feature-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -180,11 +208,21 @@ strong { font-weight: 700; }
   background: var(--c-navy);
   color: var(--c-white);
 }
+.btn--outline {
+  /* Teal outline secondary CTA per spec §4 */
+  background: transparent;
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+.btn--outline:hover {
+  background: var(--c-accent);
+  color: var(--c-navy);
+}
 
 /* ---------- Site nav ---------- */
 .site-nav { position: sticky; top: 0; z-index: 50; }
 .site-nav__utility {
-  background: var(--c-accent-dark);
+  background: var(--c-navy-2);
   color: var(--c-white);
   font-size: var(--fs-small);
   padding: 8px 0;
@@ -197,14 +235,14 @@ strong { font-weight: 700; }
   justify-content: space-between;
 }
 .site-nav__utility a { color: inherit; }
-.site-nav__utility a:hover { color: var(--c-highlight); text-decoration: none; }
+.site-nav__utility a:hover { color: var(--c-accent); text-decoration: none; }
 .site-nav__welcome { font-weight: 500; }
 .site-nav__contact { display: flex; gap: 18px; flex-wrap: wrap; }
 
 .site-nav__main {
-  background: var(--c-accent);
+  background: var(--c-navy);
   color: var(--c-white);
-  border-bottom: 1px solid var(--c-accent-dark);
+  border-bottom: 1px solid var(--c-border-dark);
 }
 .site-nav__bar {
   display: flex;
@@ -240,8 +278,8 @@ strong { font-weight: 700; }
   flex-direction: column;
   gap: 4px;
   width: 100%;
-  background: var(--c-accent);
-  border-top: 1px solid var(--c-accent-dark);
+  background: var(--c-navy);
+  border-top: 1px solid var(--c-border-dark);
   padding: 12px 0 16px 0;
 }
 .site-nav.is-open .site-nav__links { display: flex; }
@@ -254,10 +292,10 @@ strong { font-weight: 700; }
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
-.site-nav__links a:hover { color: var(--c-highlight); text-decoration: none; }
+.site-nav__links a:hover { color: var(--c-accent); text-decoration: none; }
 .site-nav__links a[aria-current="page"] {
-  color: var(--c-highlight);
-  border-bottom: 2px solid var(--c-highlight);
+  color: var(--c-accent);
+  border-bottom: 2px solid var(--c-accent);
 }
 .site-nav__cta {
   display: none;
@@ -319,6 +357,7 @@ strong { font-weight: 700; }
   color: var(--c-text-on-dark);
   padding: 64px 0 0 0;
   font-size: var(--fs-small);
+  border-top: 2px solid var(--c-accent);
 }
 .site-footer__cols {
   display: grid;
@@ -442,7 +481,7 @@ strong { font-weight: 700; }
     margin-left: auto;
   }
   .site-nav__links a { padding: 6px 0; }
-  .site-nav__links a[aria-current="page"] { border-bottom: 2px solid var(--c-highlight); }
+  .site-nav__links a[aria-current="page"] { border-bottom: 2px solid var(--c-accent); }
   .site-nav__cta {
     display: inline-block;
   }
