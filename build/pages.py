@@ -67,4 +67,11 @@ PAGES = [
         "description": "Take a look at 10+ years of completed Trailside Handyman work — handyman jobs, remodels, doors, plumbing, electrical, and drywall projects across Denver metro.",
         "nav_active": "portfolio",
     },
+    {
+        "slug": "contact",
+        "src": "contact.html",
+        "title": "Contact",
+        "description": "Get in touch with Trailside Handyman and Remodeling. Call (720) 954-1963, email michael@trailsidehandyman.com, or send a message through our contact form.",
+        "nav_active": "contact",
+    },
 ]
