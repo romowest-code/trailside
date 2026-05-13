@@ -2,7 +2,7 @@
 <section class="page-banner">
   <div class="container">
     <span class="page-banner__eyebrow">We do Repairs, Installs and Remodels</span>
-    <h1>Contact Us</h1>
+    <h1>Request a Free Estimate</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="breadcrumb__sep">/</span><span>Contact</span>
     </nav>
@@ -20,53 +20,97 @@
 
     <div class="contact-grid">
       <!-- Form -->
-      <form class="contact-form" novalidate>
+      <form class="contact-form" id="contact-form" novalidate>
         <h2 style="font-size:22px;margin-bottom:18px;">Send a message</h2>
 
-        <div class="form__row">
-          <div class="form__field">
-            <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" required autocomplete="name">
-          </div>
-          <div class="form__field">
-            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email">
-          </div>
+        <!-- Honeypot: bots will fill this, humans never see it. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form__field">
+          <label for="name">Full Name <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith">
         </div>
 
         <div class="form__row">
           <div class="form__field">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
+            <label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(720) 555-1234" inputmode="tel" pattern="[\d\s().+-]{10,}">
           </div>
           <div class="form__field">
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
-              <option value="General inquiry">General inquiry</option>
-              <option value="Handyman project">Handyman project</option>
-              <option value="Bathroom or basement remodel">Bathroom or basement remodel</option>
-              <option value="Door install or repair">Door install or repair</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Electrical or EV charger">Electrical or EV charger</option>
-              <option value="Drywall or framing">Drywall or framing</option>
-              <option value="Other">Other</option>
-            </select>
+            <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@example.com">
           </div>
         </div>
 
         <div class="form__field">
-          <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-          <textarea id="message" name="message" required placeholder="Tell us about your project &mdash; what you'd like done, rough timeline, any photos you can describe&hellip;"></textarea>
+          <label for="service_address">Service Address <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="service_address" name="service_address" required autocomplete="street-address" placeholder="Street, City, ZIP">
         </div>
 
-        <button type="submit" class="btn btn--primary" style="width:100%;">Send Message</button>
+        <div class="form__field">
+          <label for="message">What do you need help with? <span class="required" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="4" required placeholder="Describe the project, repair, or installation you need&hellip;"></textarea>
+        </div>
+
+        <div class="form__field">
+          <label for="referral_source">How did you hear about us?</label>
+          <select id="referral_source" name="referral_source">
+            <option value="">Select one (optional)</option>
+            <option value="Google">Google</option>
+            <option value="Referral">Referral</option>
+            <option value="Nextdoor">Nextdoor</option>
+            <option value="Drove by a job">Drove by a job</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label for="photos">Photos <span style="font-weight:400;color:var(--c-text-muted);">(optional)</span></label>
+          <input type="file" id="photos" name="photos" accept="image/*" multiple>
+          <p class="form__hint">Up to 5 photos, 10&nbsp;MB each. When your email app opens, attach the photos to the message before sending.</p>
+        </div>
+
+        <!-- SMS Consent block — DO NOT REWORD. Must remain unchecked by default. -->
+        <div class="sms-consent-block">
+          <label class="sms-consent-block__label" for="sms_consent">
+            <input
+              type="checkbox"
+              name="sms_consent"
+              id="sms_consent"
+              value="yes"
+              class="sms-consent-block__checkbox"
+            >
+            <span class="sms-consent-block__text">
+              <strong>Text me about my project (optional).</strong>
+              I consent to receive SMS text messages from Trailside Handyman at the phone number provided regarding appointment scheduling, technician arrival times, job updates, estimates, invoices, and replies to my questions. Message and data rates may apply. Message frequency varies. Reply HELP for help, reply STOP to unsubscribe at any time. Consent is not a condition of purchase. See our
+              <a href="/privacy-policy/">Privacy Policy</a> and
+              <a href="/terms-and-conditions/">Terms &amp; Conditions</a>.
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn--primary contact-form__submit">Request My Estimate</button>
 
         <p class="form__status" role="status" aria-live="polite"></p>
 
-        <p style="font-size:13px;color:var(--c-text-muted);margin-top:14px;margin-bottom:0;">
-          By submitting this form you agree to our <a href="/privacy-policy/" style="color:var(--c-accent-dark);">Privacy Policy</a> and <a href="/terms-and-conditions/" style="color:var(--c-accent-dark);">Terms &amp; Conditions</a>.
+        <p class="form__microcopy">
+          By submitting this form, you agree to our <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms-and-conditions/">Terms &amp; Conditions</a>.
         </p>
       </form>
+
+      <!-- Success state (revealed by JS on submit) -->
+      <div class="contact-success" id="contact-success" role="status" aria-live="polite" hidden>
+        <div class="contact-success__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h2>Thanks! I'll get back to you within 24 hours.</h2>
+        <p class="contact-success__sig">&mdash; Mike, Trailside Handyman</p>
+        <p class="contact-success__sms" id="contact-success-sms" hidden></p>
+        <p class="contact-success__hint">If your email app didn't open, email <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a> or call <a href="tel:+17209541963">(720) 954-1963</a>.</p>
+      </div>
 
       <!-- Info card -->
       <aside class="contact-info">

@@ -352,6 +352,129 @@ strong { font-weight: 700; }
   border: 1px solid var(--c-accent);
 }
 
+/* Helper text under a field (e.g., photo upload caveat) */
+.form__hint {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  margin: 6px 0 0 0;
+}
+
+/* Microcopy under submit button */
+.form__microcopy {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  margin: 14px 0 0 0;
+}
+.form__microcopy a { color: var(--c-accent-dark); }
+
+/* Honeypot — never shown to humans, only seen by bots that ignore CSS. */
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* File input */
+.form__field input[type="file"] {
+  padding: 8px 10px;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+/* ---------- SMS Consent Block (A2P 10DLC compliance) ----------
+   This block is screenshotted for Twilio carrier review. The exact text and
+   structure inside it are compliance-load-bearing; the styling below just
+   makes it visually distinct on the page. WCAG AA: gray-on-#F5F5F5 uses
+   #1A1A1A (#202020+ contrast > 16:1) for body and #1A2332 for the bold lead. */
+.sms-consent-block {
+  background: #F5F5F5;
+  border: 1px solid #D0D0D0;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 20px 0 18px;
+}
+.sms-consent-block__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+}
+.sms-consent-block__checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--c-accent-dark);
+  cursor: pointer;
+}
+.sms-consent-block__text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #1A1A1A;
+}
+.sms-consent-block__text strong { color: var(--c-navy); }
+.sms-consent-block__text a {
+  color: var(--c-accent-dark);
+  text-decoration: underline;
+}
+.sms-consent-block__text a:hover { color: var(--c-navy); }
+
+/* Submit button: full-width on mobile, auto on tablet+ */
+.contact-form__submit {
+  width: 100%;
+  margin-top: 4px;
+}
+@media (min-width: 600px) {
+  .contact-form__submit { width: auto; min-width: 220px; }
+}
+
+/* Success state — replaces the form on submit */
+.contact-success {
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 40px 28px;
+  border-top: 4px solid var(--c-accent);
+  text-align: center;
+}
+.contact-success__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(45, 212, 196, 0.15);
+  color: var(--c-accent-dark);
+  margin-bottom: 18px;
+}
+.contact-success__icon svg { width: 32px; height: 32px; }
+.contact-success h2 {
+  color: var(--c-navy);
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+.contact-success__sig {
+  color: var(--c-text-muted);
+  font-style: italic;
+  margin: 0 0 14px;
+}
+.contact-success__sms {
+  color: var(--c-text);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.contact-success__hint {
+  color: var(--c-text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
 .contact-info {
   background: var(--c-navy);
   color: var(--c-text-on-dark);

@@ -123,7 +123,7 @@ PRIVACY_BODY = """
 <p>
   <strong>Trailside Handyman / Morod Corporation</strong><br>
   Thornton, CO<br>
-  Phone: <a href="tel:+17207021869">(720) 702-1869</a><br>
+  Phone: <a href="tel:+17209541963">(720) 954-1963</a><br>
   Email: <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a><br>
   Website: <a href="https://trailsidehandyman.com">https://trailsidehandyman.com</a>
 </p>
@@ -162,7 +162,7 @@ TERMS_BODY = """
 <ul>
   <li>Submitting your phone number through the contact or estimate request form on trailsidehandyman.com and checking the SMS consent box</li>
   <li>Signing a written estimate or work authorization that includes the SMS consent disclosure and initialing the SMS opt-in section</li>
-  <li>Texting <strong>START</strong>, <strong>SUBSCRIBE</strong>, or <strong>YES</strong> to (720) 702-1869</li>
+  <li>Texting <strong>START</strong>, <strong>SUBSCRIBE</strong>, or <strong>YES</strong> to (720) 954-1963</li>
 </ul>
 <p>By opting in, you confirm that you are the account holder or authorized user of the mobile phone number provided and that you consent to receive SMS messages from Trailside Handyman at that number.</p>
 
@@ -173,7 +173,7 @@ TERMS_BODY = """
 <p><strong>Message frequency varies</strong> based on the status of your active jobs and your communication with us. A typical customer receives between 2 and 10 messages per active service request. Customers without an active job will generally receive no messages.</p>
 
 <h3>4.6 Support and Help</h3>
-<p>For help with the SMS program, reply <strong>HELP</strong> to any message or contact us at <a href="tel:+17207021869">(720) 702-1869</a> or <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a>. You will receive a reply with contact information and program details.</p>
+<p>For help with the SMS program, reply <strong>HELP</strong> to any message or contact us at <a href="tel:+17209541963">(720) 954-1963</a> or <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a>. You will receive a reply with contact information and program details.</p>
 
 <h3>4.7 Opt-Out Instructions</h3>
 <p>You can opt out of the SMS program at any time. Reply <strong>STOP</strong> to any message you receive from Trailside Handyman. After replying <strong>STOP</strong> you will receive one final confirmation message and no further SMS messages will be sent to your number unless you opt in again. Other accepted opt-out keywords include <strong>STOPALL</strong>, <strong>UNSUBSCRIBE</strong>, <strong>CANCEL</strong>, <strong>END</strong>, and <strong>QUIT</strong>.</p>
@@ -200,7 +200,7 @@ TERMS_BODY = """
 <p>
   <strong>Trailside Handyman / Morod Corporation</strong><br>
   Thornton, CO<br>
-  Phone: <a href="tel:+17207021869">(720) 702-1869</a><br>
+  Phone: <a href="tel:+17209541963">(720) 954-1963</a><br>
   Email: <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a><br>
   Website: <a href="https://trailsidehandyman.com">https://trailsidehandyman.com</a>
 </p>
