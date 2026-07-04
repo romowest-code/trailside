@@ -2,7 +2,7 @@
 <section class="page-banner">
   <div class="container">
     <span class="page-banner__eyebrow">We do Repairs, Installs and Remodels</span>
-    <h1>Request a Free Estimate</h1>
+    <h1>Request a Free Online Quote / Estimate</h1>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span class="breadcrumb__sep">/</span><span>Contact</span>
     </nav>
@@ -55,6 +55,48 @@
           <textarea id="message" name="message" rows="4" required placeholder="Describe the project, repair, or installation you need&hellip;"></textarea>
         </div>
 
+        <div class="form__row">
+          <div class="form__field">
+            <label for="timeline">Ideal timeline <span style="font-weight:400;color:var(--c-text-muted);">(optional)</span></label>
+            <select id="timeline" name="timeline">
+              <option value="">Select one</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within a month">Within a month</option>
+              <option value="1&ndash;3 months">1&ndash;3 months</option>
+              <option value="Just exploring / no rush">Just exploring / no rush</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="budget">Rough budget <span style="font-weight:400;color:var(--c-text-muted);">(optional)</span></label>
+            <select id="budget" name="budget">
+              <option value="">Select one</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500&ndash;$1,500">$500 &ndash; $1,500</option>
+              <option value="$1,500&ndash;$5,000">$1,500 &ndash; $5,000</option>
+              <option value="$5,000+">$5,000+</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form__field">
+          <label for="home_decade">What decade was your home built? <span style="font-weight:400;color:var(--c-text-muted);">(optional)</span></label>
+          <select id="home_decade" name="home_decade">
+            <option value="">Select one</option>
+            <option value="Before 1950">Before 1950</option>
+            <option value="1950s">1950s</option>
+            <option value="1960s">1960s</option>
+            <option value="1970s">1970s</option>
+            <option value="1980s">1980s</option>
+            <option value="1990s">1990s</option>
+            <option value="2000s">2000s</option>
+            <option value="2010s">2010s</option>
+            <option value="2020s">2020s</option>
+            <option value="Not sure">Not sure</option>
+          </select>
+        </div>
+
         <div class="form__field">
           <label for="referral_source">How did you hear about us?</label>
           <select id="referral_source" name="referral_source">
@@ -70,7 +112,7 @@
         <div class="form__field">
           <label for="photos">Photos <span style="font-weight:400;color:var(--c-text-muted);">(optional)</span></label>
           <input type="file" id="photos" name="photos" accept="image/*" multiple>
-          <p class="form__hint">Up to 5 photos, 10&nbsp;MB each. When your email app opens, attach the photos to the message before sending.</p>
+          <p class="form__hint">Up to 5 photos &mdash; they're sent along with your request automatically.</p>
         </div>
 
         <!-- SMS Consent block — DO NOT REWORD. Must remain unchecked by default. -->
@@ -109,7 +151,7 @@
         <h2>Thanks! I'll get back to you within 24 hours.</h2>
         <p class="contact-success__sig">&mdash; Mike, Trailside Handyman</p>
         <p class="contact-success__sms" id="contact-success-sms" hidden></p>
-        <p class="contact-success__hint">If your email app didn't open, email <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a> or call <a href="tel:+17209541963">(720) 954-1963</a>.</p>
+        <p class="contact-success__hint">Prefer to reach us directly? Email <a href="mailto:michael@trailsidehandyman.com">michael@trailsidehandyman.com</a> or call <a href="tel:+17209541963">(720) 954-1963</a>.</p>
       </div>
 
       <!-- Info card -->
@@ -148,9 +190,8 @@
 
         <hr class="contact-info__divider">
 
-        <h3 style="margin-bottom:14px;">Or Skip Ahead</h3>
-        <p style="font-size:14px;">Have a project ready to quote? Use our quote form &mdash; it includes a few extra questions to help us scope your job faster.</p>
-        <a href="https://forms.gle/YLrJo9E2oqyDCwY69" class="btn btn--outline" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-top:6px;">Get a Free Quote</a>
+        <h3 style="margin-bottom:14px;">Fast, Friendly, Local</h3>
+        <p style="font-size:14px;">Based in Thornton and serving the Denver metro. Fill out the form and I'll get back to you within 24 hours with next steps.</p>
       </aside>
     </div>
   </div>

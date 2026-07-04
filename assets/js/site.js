@@ -18,28 +18,34 @@
   });
 })();
 
-// Contact form: build a mailto: URL from the form fields and open it.
-// Works zero-setup. To upgrade to direct-submit, swap this for a POST
-// to Formspree / Web3Forms / a Vercel function.
+// Contact form: compress any uploaded photos in the browser, then POST the
+// lead as JSON to the /api/send-contact Vercel function, which emails it via
+// Resend. No mail client involved — the visitor stays on the page.
 (function () {
   var form = document.getElementById('contact-form');
   if (!form) return;
 
-  // Version + verbatim text of the SMS consent shown on this page. Logged in
-  // the outgoing email so Mike has an inbox-level paper trail of what each
-  // submitter saw and agreed to.
+  // Version of the SMS consent wording shown on this page. Sent with the lead
+  // for Mike's audit trail. The verbatim consent text lives server-side in
+  // api/send-contact.js so it can't be tampered with client-side.
   var CONSENT_VERSION = 'v1.0-2026-05-12';
-  var CONSENT_TEXT = (
-    'Text me about my project (optional). I consent to receive SMS text ' +
-    'messages from Trailside Handyman at the phone number provided regarding ' +
-    'appointment scheduling, technician arrival times, job updates, ' +
-    'estimates, invoices, and replies to my questions. Message and data ' +
-    'rates may apply. Message frequency varies. Reply HELP for help, reply ' +
-    'STOP to unsubscribe at any time. Consent is not a condition of ' +
-    'purchase. See our Privacy Policy and Terms & Conditions.'
-  );
+
+  var ENDPOINT = '/api/send-contact';
+
+  // Photo compression budget. Vercel caps the request body at ~4.5 MB, so we
+  // keep the combined base64 of all photos comfortably under that.
+  var MAX_TOTAL_CHARS = 3.5 * 1024 * 1024;
+  var MAX_DIM = 1600;      // longest edge, px
+  var JPEG_QUALITY = 0.72;
 
   function digitsOnly(s) { return (s || '').replace(/\D+/g, ''); }
+
+  function setStatus(msg, isError) {
+    var status = form.querySelector('.form__status');
+    if (!status) return;
+    status.textContent = msg || '';
+    status.style.color = isError ? '#c0392b' : '';
+  }
 
   function showSuccess(phone, consentGiven) {
     var success = document.getElementById('contact-success');
@@ -57,6 +63,60 @@
       }
     }
     success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Downscale + re-encode one image file to a JPEG data URL. Resolves null for
+  // non-images or files the browser can't decode (e.g. some HEIC).
+  function compressImage(file, maxDim, quality) {
+    return new Promise(function (resolve) {
+      if (!file || !/^image\//.test(file.type)) { resolve(null); return; }
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        URL.revokeObjectURL(url);
+        var w = img.naturalWidth, h = img.naturalHeight;
+        if (!w || !h) { resolve(null); return; }
+        var scale = Math.min(1, maxDim / Math.max(w, h));
+        var cw = Math.max(1, Math.round(w * scale));
+        var ch = Math.max(1, Math.round(h * scale));
+        var canvas = document.createElement('canvas');
+        canvas.width = cw;
+        canvas.height = ch;
+        try {
+          canvas.getContext('2d').drawImage(img, 0, 0, cw, ch);
+          var baseName = file.name.replace(/\.[^.]+$/, '') || 'photo';
+          resolve({ filename: baseName + '.jpg', content: canvas.toDataURL('image/jpeg', quality) });
+        } catch (e) {
+          resolve(null);
+        }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); resolve(null); };
+      img.src = url;
+    });
+  }
+
+  // Compress up to 5 photos, staying within the total-size budget. Retries a
+  // too-big photo once at a smaller size before giving up on it.
+  function collectPhotos(fileList) {
+    var files = [];
+    for (var i = 0; i < fileList.length && i < 5; i++) files.push(fileList[i]);
+    var out = [];
+    var used = 0;
+    return files.reduce(function (chain, file) {
+      return chain.then(function () {
+        return compressImage(file, MAX_DIM, JPEG_QUALITY).then(function (c) {
+          if (c && c.content.length > MAX_TOTAL_CHARS - used) {
+            return compressImage(file, 1100, 0.55); // second, smaller pass
+          }
+          return c;
+        }).then(function (c) {
+          if (c && c.content.length <= MAX_TOTAL_CHARS - used) {
+            out.push(c);
+            used += c.content.length;
+          }
+        });
+      });
+    }, Promise.resolve()).then(function () { return out; });
   }
 
   form.addEventListener('submit', function (e) {
@@ -94,51 +154,52 @@
     }
     var serviceAddress = (data.get('service_address') || '').trim();
     var message = (data.get('message') || '').trim();
+    var timeline = (data.get('timeline') || '').trim();
+    var budget = (data.get('budget') || '').trim();
+    var homeDecade = (data.get('home_decade') || '').trim();
     var referral = (data.get('referral_source') || '').trim() || 'Not provided';
     var smsConsent = data.get('sms_consent') === 'yes';
 
-    // List of photo filenames (mailto: can't actually attach files; the user
-    // needs to attach them in their mail client. We surface this in the body.)
+    var submitBtn = form.querySelector('.contact-form__submit');
+    var btnLabel = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+    setStatus('Compressing photos and sending your request…', false);
+
     var photoFiles = (form.elements['photos'] && form.elements['photos'].files) || [];
-    var photoLines = [];
-    for (var i = 0; i < photoFiles.length; i++) {
-      photoLines.push('  - ' + photoFiles[i].name + ' (' + Math.round(photoFiles[i].size / 1024) + ' KB)');
-    }
 
-    var subject = 'New Trailside Handyman lead: ' + name;
-    var body = [
-      'NEW LEAD via trailsidehandyman.com',
-      '',
-      'Name: ' + name,
-      'Phone: ' + phoneRaw,
-      'Email: ' + email,
-      'Service Address: ' + serviceAddress,
-      'Heard about us: ' + referral,
-      'SMS Consent: ' + (smsConsent ? 'YES' : 'NO'),
-      '',
-      'PROJECT DESCRIPTION:',
-      message,
-      '',
-      'PHOTOS:',
-      photoLines.length
-        ? photoLines.join('\n') + '\n(Please attach these photos to this email before sending.)'
-        : 'No photos uploaded.',
-      '',
-      '----- SMS consent audit trail -----',
-      'Consent text version: ' + CONSENT_VERSION,
-      'Consent text shown to submitter:',
-      CONSENT_TEXT,
-      'Submitter agreed: ' + (smsConsent ? 'YES' : 'NO'),
-      'Submitted: ' + new Date().toISOString(),
-      'Source URL: ' + window.location.href,
-      'User Agent: ' + navigator.userAgent
-    ].join('\n');
+    collectPhotos(photoFiles).then(function (photos) {
+      var payload = {
+        name: name,
+        email: email,
+        phone: phoneRaw,
+        service_address: serviceAddress,
+        message: message,
+        timeline: timeline,
+        budget: budget,
+        home_decade: homeDecade,
+        referral_source: referral,
+        sms_consent: smsConsent,
+        consent_version: CONSENT_VERSION,
+        source_url: window.location.href,
+        photos: photos
+      };
 
-    var href = 'mailto:michael@trailsidehandyman.com' +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-
-    showSuccess(phoneRaw, smsConsent);
-    window.location.href = href;
+      return fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      setStatus('', false);
+      showSuccess(phoneRaw, smsConsent);
+    }).catch(function () {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = btnLabel; }
+      setStatus(
+        'Sorry — something went wrong sending your request. Please email ' +
+        'michael@trailsidehandyman.com or call (720) 954-1963.',
+        true
+      );
+    });
   });
 })();
