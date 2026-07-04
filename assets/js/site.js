@@ -197,7 +197,7 @@
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = btnLabel; }
       setStatus(
         'Sorry — something went wrong sending your request. Please email ' +
-        'michael@trailsidehandyman.com or call (720) 954-1963.',
+        'michael@trailsidehandyman.com or call (303) 214-4479.',
         true
       );
     });

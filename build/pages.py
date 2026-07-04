@@ -71,7 +71,7 @@ PAGES = [
         "slug": "contact",
         "src": "contact.html",
         "title": "Contact",
-        "description": "Get in touch with Trailside Handyman and Remodeling. Call (720) 954-1963, email michael@trailsidehandyman.com, or send a message through our contact form.",
+        "description": "Get in touch with Trailside Handyman and Remodeling. Call (303) 214-4479, email michael@trailsidehandyman.com, or send a message through our contact form.",
         "nav_active": "contact",
     },
 ]
