@@ -18,6 +18,47 @@
   });
 })();
 
+// Links flagged with data-popup open in a centered popup window instead of a
+// full tab: the Google reviews link in the nav, and the portfolio tiles that
+// point at our Google Photos albums. Browsers allow this because it happens
+// inside a real click; if a blocker stops it anyway we leave the click alone
+// and the href opens a normal new tab.
+//   data-popup       window name (reused on repeat clicks)
+//   data-popup-size  fraction of the screen the window fills (default 0.7)
+//   data-popup-then  where the original page goes once the popup is open
+(function () {
+  var links = document.querySelectorAll('a[data-popup]');
+  if (!links.length) return;
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      // Let modifier- and middle-clicks do their normal thing.
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      // Phones and small tablets ignore window sizing, so just open a tab.
+      if (window.innerWidth < 700) return;
+
+      var size = parseFloat(link.getAttribute('data-popup-size')) || 0.7;
+      var w = Math.round(screen.availWidth * size);
+      var h = Math.round(screen.availHeight * size);
+      var left = Math.round((screen.availWidth - w) / 2 + (screen.availLeft || 0));
+      var top = Math.round((screen.availHeight - h) / 2 + (screen.availTop || 0));
+      var features = 'popup=yes,width=' + w + ',height=' + h +
+        ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes';
+
+      var win = window.open(link.href, link.getAttribute('data-popup'), features);
+      if (!win) return;  // blocked — the anchor's target="_blank" takes over
+
+      e.preventDefault();
+      try { win.opener = null; } catch (err) {}
+      win.focus();
+
+      // Leave the quote page behind the album window when asked to.
+      var next = link.getAttribute('data-popup-then');
+      if (next) window.location.href = next;
+    });
+  });
+})();
+
 // Contact form: compress any uploaded photos in the browser, then POST the
 // lead as JSON to the /api/send-contact Vercel function, which emails it via
 // Resend. No mail client involved — the visitor stays on the page.

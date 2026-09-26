@@ -665,7 +665,7 @@ strong { font-weight: 700; }
   align-items: center;
   justify-content: space-between;
   min-height: var(--nav-height);
-  gap: 16px;
+  gap: 10px;
 }
 .site-nav__logo {
   display: flex;
@@ -673,10 +673,41 @@ strong { font-weight: 700; }
   flex-shrink: 0;
 }
 .site-nav__logo img {
-  height: 52px;
+  height: 34px;
   width: auto;
   filter: brightness(0) invert(1);
 }
+
+/* Google reviews link, sits to the right of the logo. Opens in a sized popup
+   window (see site.js); falls back to a normal new tab if blocked. */
+.site-nav__reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 0;
+  padding: 4px 7px;
+  border: 1px solid var(--c-border-dark);
+  border-radius: var(--radius);
+  color: var(--c-white);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-nav__reviews:hover,
+.site-nav__reviews:focus-visible {
+  color: var(--c-white);
+  border-color: var(--c-highlight);
+  background: rgba(245, 166, 35, 0.12);
+  text-decoration: none;
+}
+.site-nav__reviews-stars {
+  color: var(--c-highlight);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.site-nav__reviews-label { display: none; }
 .site-nav__hamburger {
   background: transparent;
   border: 0;
@@ -702,6 +733,7 @@ strong { font-weight: 700; }
 .site-nav__links a {
   display: block;
   padding: 10px 4px;
+  white-space: nowrap;
   color: var(--c-white);
   font-weight: 500;
   font-size: 15px;
@@ -881,12 +913,17 @@ strong { font-weight: 700; }
     grid-template-columns: 1fr 1fr;
   }
   .hero { min-height: 420px; }
+  .site-nav__bar { gap: 16px; }
+  .site-nav__logo img { height: 52px; }
+  .site-nav__reviews { margin-left: 4px; padding: 6px 10px; gap: 7px; }
+  .site-nav__reviews-stars { font-size: 12px; letter-spacing: 1px; }
+  .site-nav__reviews-label { display: inline; }
 }
 
 /* ---------- Desktop ---------- */
 @media (min-width: 1024px) {
   .site-nav__hamburger { display: none; }
-  .site-nav__bar { gap: 32px; }
+  .site-nav__bar { gap: 20px; }
   .site-nav__links {
     display: flex;
     flex-direction: row;
@@ -894,7 +931,7 @@ strong { font-weight: 700; }
     background: transparent;
     border-top: 0;
     padding: 0;
-    gap: 28px;
+    gap: 20px;
     margin-left: auto;
   }
   .site-nav__links a { padding: 6px 0; }
