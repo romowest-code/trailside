@@ -25,10 +25,8 @@
   var form = document.getElementById('contact-form');
   if (!form) return;
 
-  // Version of the SMS consent wording shown on this page. Sent with the lead
-  // for Mike's audit trail. The verbatim consent text lives server-side in
-  // api/send-contact.js so it can't be tampered with client-side.
-  var CONSENT_VERSION = 'v1.0-2026-05-12';
+  // SMS opt-in DISABLED for now — email only. Re-enable with the SMS integration.
+  // var CONSENT_VERSION = 'v1.0-2026-05-12';
 
   var ENDPOINT = '/api/send-contact';
 
@@ -53,15 +51,16 @@
     form.hidden = true;
     success.hidden = false;
 
-    var smsLine = document.getElementById('contact-success-sms');
-    if (smsLine) {
-      if (consentGiven && phone) {
-        smsLine.textContent = "I'll also text you at " + phone + " when your estimate is ready.";
-        smsLine.hidden = false;
-      } else {
-        smsLine.hidden = true;
-      }
-    }
+    // SMS opt-in disabled — no confirmation-text line shown (email only for now).
+    // var smsLine = document.getElementById('contact-success-sms');
+    // if (smsLine) {
+    //   if (consentGiven && phone) {
+    //     smsLine.textContent = "I'll also send a confirmation text to " + phone + " shortly.";
+    //     smsLine.hidden = false;
+    //   } else {
+    //     smsLine.hidden = true;
+    //   }
+    // }
     success.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -158,7 +157,9 @@
     var budget = (data.get('budget') || '').trim();
     var homeDecade = (data.get('home_decade') || '').trim();
     var referral = (data.get('referral_source') || '').trim() || 'Not provided';
-    var smsConsent = data.get('sms_consent') === 'yes';
+    // SMS opt-in disabled — email only for now.
+    // var smsConsent = data.get('sms_consent') === 'yes';
+    var smsConsent = false;
 
     var submitBtn = form.querySelector('.contact-form__submit');
     var btnLabel = submitBtn ? submitBtn.textContent : '';
@@ -178,8 +179,8 @@
         budget: budget,
         home_decade: homeDecade,
         referral_source: referral,
-        sms_consent: smsConsent,
-        consent_version: CONSENT_VERSION,
+        // sms_consent: smsConsent,           // SMS disabled — email only
+        // consent_version: CONSENT_VERSION,
         source_url: window.location.href,
         photos: photos
       };

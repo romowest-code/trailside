@@ -1,20 +1,75 @@
 // Vercel serverless function — emails Trailside Handyman contact-form leads
 // via Resend. Lives at POST /api/send-contact.
 //
-// Requires the RESEND_API_KEY env var to be set on the Trailside Vercel
-// project. Sends from the verified c-money.app domain; the lead's own email
-// is set as Reply-To so Mike can reply straight to them.
+// Requires RESEND_API_KEY on the Trailside Vercel project. Sends from the
+// verified c-money.app domain; the lead's email is set as Reply-To.
+//
+// NOTE: SMS/texting is DISABLED for now — EMAIL ONLY. The Twilio integration
+// below is commented out. To re-enable: uncomment the Twilio block, the SMS
+// send block in the handler, and the consent lines in the email, then set the
+// TWILIO_* / LEAD_ALERT_SMS_TO env vars in Vercel.
 
 const LEAD_TO = 'michael@trailsidehandyman.com';
 const FROM = 'Trailside Leads <leads@c-money.app>';
+
+/* ---- Twilio SMS (DISABLED — email only for now) ----
+const TWILIO_SID = process.env.TWILIO_ACCOUNT_SID;
+const TWILIO_TOKEN = process.env.TWILIO_AUTH_TOKEN;
+const TWILIO_FROM = process.env.TWILIO_FROM;
+const TWILIO_MSG_SERVICE = process.env.TWILIO_MESSAGING_SERVICE_SID;
+const LEAD_ALERT_SMS_TO = process.env.LEAD_ALERT_SMS_TO;
+
+// Format a US phone as E.164 (+1XXXXXXXXXX); returns null if it can't.
+function toE164US(raw) {
+  const d = String(raw || '').replace(/\D+/g, '');
+  if (d.length === 10) return '+1' + d;
+  if (d.length === 11 && d[0] === '1') return '+' + d;
+  if (String(raw || '').trim().charAt(0) === '+') return String(raw).trim();
+  return null;
+}
+
+// Best-effort single SMS via the Twilio REST API (no SDK, raw fetch).
+// Never throws; returns a small status string for logging/debugging.
+async function sendSms(to, bodyText) {
+  if (!TWILIO_SID || !TWILIO_TOKEN || (!TWILIO_FROM && !TWILIO_MSG_SERVICE)) {
+    return 'skipped:not-configured';
+  }
+  if (!to) return 'skipped:no-recipient';
+  const params = new URLSearchParams();
+  params.set('To', to);
+  if (TWILIO_MSG_SERVICE) params.set('MessagingServiceSid', TWILIO_MSG_SERVICE);
+  else params.set('From', TWILIO_FROM);
+  params.set('Body', bodyText);
+  const auth = Buffer.from(TWILIO_SID + ':' + TWILIO_TOKEN).toString('base64');
+  try {
+    const r = await fetch(
+      'https://api.twilio.com/2010-04-01/Accounts/' + TWILIO_SID + '/Messages.json',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Basic ' + auth,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString(),
+      }
+    );
+    if (!r.ok) {
+      const t = await r.text();
+      return 'error:' + r.status + ':' + t.slice(0, 160);
+    }
+    return 'sent';
+  } catch (e) {
+    return 'error:' + String((e && e.message) || e).slice(0, 160);
+  }
+}
+---- end Twilio SMS ---- */
 
 // Guard against oversized payloads getting to Resend. Vercel already caps the
 // request body at ~4.5 MB, so this is a secondary backstop (~8 MB decoded).
 const MAX_ATTACH_BYTES = 8 * 1024 * 1024;
 
-// Exact SMS consent wording shown on /contact/. Kept here as the source of
-// truth for the audit trail so it can't be tampered with client-side. Keep in
-// sync with the consent block in build/pages/contact.html.
+/* SMS consent wording — DISABLED (email only for now). Re-enable with the
+   SMS integration.
 const CONSENT_TEXT =
   'Text me about my project (optional). I consent to receive SMS text ' +
   'messages from Trailside Handyman at the phone number provided regarding ' +
@@ -23,6 +78,7 @@ const CONSENT_TEXT =
   'rates may apply. Message frequency varies. Reply HELP for help, reply ' +
   'STOP to unsubscribe at any time. Consent is not a condition of ' +
   'purchase. See our Privacy Policy and Terms & Conditions.';
+*/
 
 function esc(s) {
   return String(s == null ? '' : s)
@@ -121,7 +177,7 @@ export default async function handler(req, res) {
       row('Rough budget', budget || 'Not provided') +
       row('Home built', home_decade || 'Not provided') +
       row('Heard about us', referral_source || 'Not provided') +
-      row('SMS consent', consentGiven ? 'YES' : 'NO') +
+      // row('SMS consent', consentGiven ? 'YES' : 'NO') +  // SMS disabled — email only
     '</table>' +
     '<h3 style="font-family:system-ui,Arial,sans-serif;">Project description</h3>' +
     '<p style="white-space:pre-wrap;font-family:system-ui,Arial,sans-serif;font-size:14px;">' +
@@ -130,12 +186,10 @@ export default async function handler(req, res) {
     '<pre style="font-family:ui-monospace,monospace;font-size:13px;white-space:pre-wrap;">' +
       esc(attachNote) + '</pre>' +
     '<hr>' +
-    '<h3 style="font-family:system-ui,Arial,sans-serif;">SMS consent audit trail</h3>' +
+    '<h3 style="font-family:system-ui,Arial,sans-serif;">Submission details</h3>' +
     '<pre style="font-family:ui-monospace,monospace;font-size:12px;white-space:pre-wrap;">' +
       esc(
-        'Consent version: ' + (consent_version || 'n/a') + '\n' +
-        'Submitter agreed: ' + (consentGiven ? 'YES' : 'NO') + '\n' +
-        'Consent text shown:\n' + CONSENT_TEXT + '\n\n' +
+        // SMS opt-in disabled — consent audit lines omitted (email only for now)
         'Submitted: ' + nowIso + '\n' +
         'Source URL: ' + (source_url || 'n/a') + '\n' +
         'IP: ' + ip + '\n' +
@@ -164,6 +218,29 @@ export default async function handler(req, res) {
     if (!response.ok) {
       return res.status(response.status).json({ error: (data && data.message) || 'Send failed' });
     }
+
+    /* SMS DISABLED — email only for now. Re-enable when the Twilio campaign is live.
+    const firstName = String(name).trim().split(/\s+/)[0] || 'there';
+    const sms = { customer: 'skipped:no-consent', mike: 'skipped:not-configured' };
+    try {
+      if (consentGiven) {
+        sms.customer = await sendSms(
+          toE164US(phone),
+          'Trailside Handyman: Thanks ' + firstName + '! We received your request ' +
+          'and will get back to you within 24 hours. Reply STOP to opt out, HELP for help.'
+        );
+      }
+      sms.mike = await sendSms(
+        LEAD_ALERT_SMS_TO,
+        'New Trailside lead: ' + name + ', ' + phone + ' — ' + service_address +
+        '. Check email for full details.'
+      );
+    } catch (e) {
+      // swallow — email already succeeded
+    }
+    console.log('send-contact SMS status', sms);
+    */
+
     return res.status(200).json({ success: true });
   } catch (error) {
     return res.status(500).json({ error: 'Failed to send message' });
