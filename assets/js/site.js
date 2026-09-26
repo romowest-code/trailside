@@ -18,43 +18,60 @@
   });
 })();
 
-// Links flagged with data-popup open in a centered popup window instead of a
-// full tab: the Google reviews link in the nav, and the portfolio tiles that
-// point at our Google Photos albums. Browsers allow this because it happens
-// inside a real click; if a blocker stops it anyway we leave the click alone
-// and the href opens a normal new tab.
+// Links flagged with data-popup open our Google Photos albums and the Google
+// reviews listing in a separate window, leaving the quote page behind in the
+// original one. Sized windows are used instead of an on-page modal because
+// Google sends X-Frame-Options on Maps and Photos, so an iframe would be blank.
+//
+// Browsers allow this because window.open runs synchronously inside a real
+// click; an async call would lose the user gesture and get blocked. Phones
+// ignore window sizing, so there they get a plain new tab -- but the page
+// behind it still moves to the quote form, same as on desktop.
+//
 //   data-popup       window name (reused on repeat clicks)
 //   data-popup-size  fraction of the screen the window fills (default 0.7)
-//   data-popup-then  where the original page goes once the popup is open
+//   data-popup-then  where the original page goes once the album is open
 (function () {
   var links = document.querySelectorAll('a[data-popup]');
   if (!links.length) return;
+
+  // Phones and small tablets can't place or size a window, so don't ask them to.
+  function canSizeWindows() {
+    return window.innerWidth >= 700 && !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+  function sizedFeatures(size) {
+    var w = Math.round(screen.availWidth * size);
+    var h = Math.round(screen.availHeight * size);
+    var left = Math.round((screen.availWidth - w) / 2 + (screen.availLeft || 0));
+    var top = Math.round((screen.availHeight - h) / 2 + (screen.availTop || 0));
+    return 'popup=yes,width=' + w + ',height=' + h +
+      ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes';
+  }
 
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
       // Let modifier- and middle-clicks do their normal thing.
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-      // Phones and small tablets ignore window sizing, so just open a tab.
-      if (window.innerWidth < 700) return;
 
       var size = parseFloat(link.getAttribute('data-popup-size')) || 0.7;
-      var w = Math.round(screen.availWidth * size);
-      var h = Math.round(screen.availHeight * size);
-      var left = Math.round((screen.availWidth - w) / 2 + (screen.availLeft || 0));
-      var top = Math.round((screen.availHeight - h) / 2 + (screen.availTop || 0));
-      var features = 'popup=yes,width=' + w + ',height=' + h +
-        ',left=' + left + ',top=' + top + ',scrollbars=yes,resizable=yes';
+      var name = link.getAttribute('data-popup');
+      var win = canSizeWindows()
+        ? window.open(link.href, name, sizedFeatures(size))
+        : window.open(link.href, name);
 
-      var win = window.open(link.href, link.getAttribute('data-popup'), features);
-      if (!win) return;  // blocked — the anchor's target="_blank" takes over
+      if (!win) return;  // blocked -- the anchor's target="_blank" takes over
 
       e.preventDefault();
       try { win.opener = null; } catch (err) {}
-      win.focus();
+      try { win.focus(); } catch (err) {}
 
-      // Leave the quote page behind the album window when asked to.
+      // Leave the quote page behind the album. Deferred a beat so mobile
+      // browsers finish handing off to the new tab before this one navigates.
       var next = link.getAttribute('data-popup-then');
-      if (next) window.location.href = next;
+      if (next) {
+        setTimeout(function () { window.location.href = next; }, 150);
+      }
     });
   });
 })();
