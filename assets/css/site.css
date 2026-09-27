@@ -752,6 +752,79 @@ strong { font-weight: 700; }
   font-size: 14px;
 }
 
+/* ---------- Testimonials (hand-picked Google reviews) ---------- */
+.reviews__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+.reviews__score {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-text);
+}
+.reviews__stars {
+  color: var(--c-highlight);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.reviews__count { color: var(--c-text-muted); font-size: var(--fs-small); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+/* Kept next to the base rule rather than in the shared 768px block earlier in
+   the file -- that block comes first in source order, so the single-column
+   default would override it. */
+@media (min-width: 768px) {
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.review-card {
+  /* Grey card on the white section, inverting the white-on-grey feature cards
+     directly above so the two blocks stay visually distinct. */
+  background: var(--c-bg-light);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-lg);
+  margin: 0;  /* figure carries a default 1em/40px margin in every browser */
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.review-card__stars {
+  color: var(--c-highlight);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.review-card__quote {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--c-text);
+}
+.review-card__who {
+  margin: 0;
+  margin-top: auto;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--c-text-muted);
+}
+.reviews__more {
+  display: block;
+  text-align: center;
+  margin-top: 32px;
+  font-weight: 600;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
